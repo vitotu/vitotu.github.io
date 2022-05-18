@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Reactive</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <div id='app'>
+    name:<input type="text" v-model="name">
+    passWord:<input type="text" v-model="passWord">
+    {{name}} {{passWord}}
+    <div>
+      <div>{{name}}</div>
+    </div>
+  </div>
+  <script>
+    /**
+     * 简单实现vue响应式及双向绑定，对对象型数据读取键值还需完善
+    */
+    class Vue {
+      constructor(option){
+        this.data = option.data;
+        this.id = option.el;
+        Observer.observe(this.data);
+        let dom = Vue.nodeToFragment(document.getElementById(this.id), this);
+        document.getElementById(this.id).appendChild(dom);
+      }
+      static nodeToFragment(node, vm){
+        let fragment = document.createDocumentFragment();
+        let child;
+        while(child = node.firstChild) {
+          fragment.appendChild(child); // append 将节点添加到DOM片段中的同时将传入节点移除
+        }
+        Vue.loopNode(fragment.childNodes, vm); // 循环递归编译节点
+        return fragment;
+      }
+      static loopNode(nodes, vm) {
+        Array.from(nodes).forEach(node => {
+          Vue.compile(node, vm); // 编译节点
+          if(node.childNodes.length > 0){
+            Vue.loopNode(node.childNodes, vm);
+          }
+        })
+      }
+      static compile(node, vm) {
+        if (node.nodeType === 1) { // 如果是元素节点，则处理节点中的属性
+          let attrs = node.attributes;
+          Array.from(attrs).forEach(attr => {
+            if(attr.nodeName == "v-model") { // 发现v-model属性，添加input监听
+              let name = attr.nodeValue;
+              node.addEventListener('input', function(e) {
+                vm.data[name] = e.target.value; // 在回调函数中替换绑定的数据，触发set
+              })
+              node.value = vm.data[name]; // 初次编译时使用绑定的值进行替换触发get
+              new Watcher(vm, node, name); 
+              // 创建一个watcher对象保存vm、当前节点、节点绑定数据的name，便于后续响应式更新
+            }
+          });
+        }
+        // 处理文本节点
+        let reg = /\{\{([^}]*)\}\}/g;
+        let textContent = node.textContent;
+        if(node.nodeType === 3 && reg.test(textContent)){
+          node.cache = textContent;
+          node.textContent = node.cache.replace(reg, function() {
+            // let attr = arguments[0].slice(2, arguments[0].length - 2);
+            let attr = arguments[1]; // 获取文本节点中绑定的数据名，创建对应的watcher对象
+            new Watcher(vm, node, attr);
+            return vm.data[attr]; // 返回绑定的值完成初次替换
+          })
+        }
+      }
+    }
+    class Observer {
+      static observe(data) {
+        if(typeof data != 'object' || ! data) {
+          return
+        }
+        Object.keys(data).forEach(key => {
+          Observer.defineReactive(data, key, data[key]);
+        })
+      }
+      static defineReactive(data, key, val) {
+        let dep = new Dep(); // 闭包存储watcher收集器
+        Observer.observe(val); // 递归的设置响应式
+        Object.defineProperty(data, key, {
+          get() { // 拦截读取操作，并收集watcher对象
+            Dep.target && dep.addSub(Dep.target);
+            return val;
+          },
+          set(newVal) {
+            if(newVal !== val){
+              val = newVal;
+              dep.notify(); // 当值变动时，通知watcher对象进行更新操作
+            }else {
+              return;
+            }
+          }
+        })
+      }
+    }
+    class Dep {
+      constructor() {
+        this.subs = [];
+      }
+      addSub(sub) {
+        this.subs.push(sub); // 收集watcher对象
+      }
+      notify() {
+        this.subs.forEach(sub => {
+          sub.update(); // 依次通知watcher对对象进行更新
+        })
+      }
+    }
+    class Watcher {
+      // watcher对象中保存vm、node、响应式数据的key(即参数name)
+      constructor(vm, node, name){
+        this.vm = vm;
+        this.node = node;
+        this.name = name;
+        this.value = this.get(); // 创建对象时调用get方法，通过Dep静态变量将自己加入到observe的dep依赖收集器中
+      }
+      get() {
+        Dep.target = this; // 将自身绑定到Dep对象上
+        let value = this.vm.data[this.name]; 
+        // 读取变量，通过变量的get方法将自身加入到dep中
+        Dep.target = null; // 释放Dep.target
+        return value;
+      }
+      update() {
+        if(this.node.nodeType === 1) {
+          this.node.nodeValue = this.vm.data[this.name]; 
+          // 此处不可调用get方法，防止形成循环加入
+        } else {
+          this.node.textContent = this.node.cache.replace(/\{\{([^}]*)\}\}/g, 
+            (...rest) => this.vm.data[rest[1]]
+            // update方法中可保证文本节点中一定能匹配到数据，因此可以放心使用rest[1]
+          )
+        }
+      }
+    }
+    var vm = new Vue({
+      el: 'app',
+      data:{
+        name: "reactive",
+        passWord: "123456",
+        obj: {
+          obj1: 'obj1'
+        },
+        arr: ['arr1', 'arr2']
+      }
+    })
+  </script>
+</body>
+</html>

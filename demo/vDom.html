@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vDom demo</title>
+  <style>
+    ul { 
+      display: flex;
+      flex-flow: row wrap;
+    }
+    li {
+      flex: 1 1 30px;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">click to change dom</button>
+  <div id="app"></div>
+  <script>
+    class VDom {
+      /**
+       * @description: 简单的h函数，将token转换为VNode对象，将对入参进行严格检查
+       * @param {String} sel 标签名
+       * @param {Object} data 标签属性
+       * @param {String|Number|Array|h()} c 文本节点或子节点数组
+       * @return {VNode}
+       */
+      static h(sel, data, c) { // 对tokens的递归交由外部实现
+        if(arguments.length !== 3) throw new Error('h only accept 3 args');
+        if(typeof c === 'string' || typeof c === 'number'){ // 检测到文本节点
+          return new VNode(sel, data, undefined, c, undefined);
+        } else if (Array.isArray(c)){ // 检测到子节点列表循环处理
+          let children = [];
+          for(let i = 0; i < c.length; i++) {
+            if(!(typeof c[i] === "object" && c[i].hasOwnProperty('sel'))){
+              throw new Error('array c must be h item')
+            } // 只有数组中的每项满足是对象类型且含有sel属性时才放入children收集器中
+            children.push(c[i]);
+          } // 假设仅存在子节点，不同时含文本节点等复杂情况
+          return new VNode(sel, data, children, undefined, undefined);
+        } else if (typeof c === "object" && c.hasOwnProperty('sel')){
+          let children = [c]; // 若为对象类型且有sel属性，则仅有一个子节点，对应c为非数组情况
+          return new VNode(sel, data, children, undefined, undefined);
+        } else { // 若所有支持的情况都不满足则抛出错误
+          throw new Error('typeof c not support');
+        }
+      }
+      /**
+       * @description: 在此函数中进行新旧虚拟DOM比较
+       * @param {VNode} oldVNode
+       * @param {VNode} newVNode
+       * @return {undefined}
+       */
+      static patch(oldVNode, newVNode){
+        // 旧的节点不是VNode虚拟节点则基于旧节点创建一个虚拟节点
+        if(oldVNode.sel === '' || oldVNode.sel === undefined){
+          oldVNode = new VNode(oldVNode.tagName.toLowerCase(), {}, [], undefined, oldVNode);
+        }
+        // 命中规则，判定新旧VNode相同，进行更细致的比较
+        if(oldVNode.key === newVNode.key && oldVNode.sel === newVNode.sel){
+          VDom.patchVNode(oldVNode, newVNode); 
+        } else { // 不是同一个虚拟节点，直接插入新的节点并删除旧节点
+          let newVNodeElm = VDom.createElement(newVNode);
+          if(oldVNode.elm.parentNode && newVNodeElm) { // 插入到旧节点之前
+            oldVNode.elm.parentNode.insertBefore(newVNodeElm, oldVNode.elm);
+          }
+          oldVNode.elm.parentNode.removeChild(oldVNode.elm); // 删除旧的节点
+        }
+      }
+      static patchVNode(oldVNode, newVNode){ // 在此函数中进行更细致的比较
+        if(oldVNode === newVNode) return; // 新旧节点指向内存中相同的对象则不用更新
+        if(newVNode.text !== undefined && (newVNode.children === undefined || newVNode.children.length === 0)){ // 新VNode仅有文本节点时, 直接判断新旧节点的文本是否相同
+          if(newVNode.text !== oldVNode.text){ // 若不同直接进行更新，旧VNode的子节点已没有意义
+            oldVNode.elm.innerText = newVNode.text;
+          }
+        } else { // 新VNode中不存在文本节点(假定文本节点不与子节点同时存在)
+          // 若旧VNode中存在子节点，则对子节点进行更新
+          if(oldVNode.children !== undefined && oldVNode.children.length > 0){
+            VDom.updateChildren(oldVNode.elm, oldVNode.children, newVNode.children);
+          }else { // 若旧VNode中不存在子节点则循环的新VNode中的所有子节点添加到DOM中
+            oldVNode.elm.innerHTML = '';
+            for(let i = 0; i < newVNode.children.length; i++){
+              let dom = VDom.createElement(newVNode.children[i]);
+              oldVNode.elm.appendChild(dom);
+            }
+          }
+        }
+      }
+      static createElement(vNode){ // 基于VNode对象创建孤儿(未挂在的)真实DOM节点
+        let domNode = document.createElement(vNode.sel);
+        if(vNode.text !== '' && (vNode.children === undefined || vNode.children.length === 0)) {
+          domNode.innerText = vNode.text;
+        } else if (Array.isArray(vNode.children) && vNode.children.length > 0) {
+          for(let i = 0; i < vNode.children.length; i++) {
+            let ch = vNode.children[i];
+            let chDom = VDom.createElement(ch);
+            domNode.appendChild(chDom);
+          }
+        }
+        vNode.elm = domNode; // 将创建的孤儿节点挂在到VNode对象上
+        return vNode.elm;
+      }
+      /**
+       * @description: 使用左右双指针法对两个子节点序列进行递归比较，并操作对应真实DOM更新
+       * @param {*} parentElm 旧VNode序列对应真实DOM的父节点
+       * @param {Array[VNode]} oldCh 旧VNode序列
+       * @param {Array[VNode]} newCh 新VNode序列
+       * @return {undefined}
+       */
+      static updateChildren(parentElm, oldCh, newCh) {
+        // 相同节点判断
+        const isSameVNode = (a, b) => a.sel === b.sel && a.key === b.key;
+        // 空节点判断
+        const isVoidVNode = v => v === null || v === undefined;
+        // 定义新旧子节点的左指针 oldLeftIndex, newLeftIndex
+        let oldLI = 0, newLI = 0;
+        // 定义新旧节点的右指针 oldRightIndex, newRightIndex
+        let oldRI = oldCh.length - 1, newRI = newCh.length - 1;
+        let keyMap = null;
+        while(oldLI <= oldRI && newLI <= newRI){
+          if(isVoidVNode(oldCh[oldLI])) oldLI++; // 空节点检查
+          else if(isVoidVNode(oldCh[oldRI])) oldRI--;
+          else if(isVoidVNode(newCh[newLI])) newLI++;
+          else if(isVoidVNode(newCh[newRI])) newRI--;
+          // 新旧序列左指针对应的VNode判定相等，递归的进行更精细化的比较，并移动指针
+          else if(isSameVNode(oldCh[oldLI], newCh[newLI])){
+            VDom.patchVNode(oldCh[oldLI], newCh[newLI]);
+            oldLI++;
+            newLI++;
+          } // 新旧序列右指针对应的VNode判定相等，递归进行更精细化的比较，并移动指针
+          else if(isSameVNode(oldCh[oldRI], newCh[newRI])){
+            VDom.patchVNode(oldCh[oldRI], newCh[newRI]);
+            oldRI--;
+            newRI--;
+          } // 旧序列的左指针与新序列的右指针对应VNode判定相等，递归进行更精细化的比较，
+          // 同时在DOM中将旧VNode对应的节点移动到旧序列右指针VNode对应的节点后方，移动指针
+          else if(isSameVNode(oldCh[oldLI], newCh[newRI])){
+            VDom.patchVNode(oldCh[oldLI], newCh[newRI]);
+            parentElm.insertBefore(oldCh[oldLI].elm, oldCh[oldRI].elm.nextSibling);
+            oldLI++;
+            newRI--;
+          } // 旧序列的右指针与新序列的左指针对应VNode判定相等，队规进行更精细化的比较，
+          // 同时在DOM中将旧VNode对应的节点移动到旧序列左指针VNode对应的节点前方，移动指针
+          else if(isSameVNode(oldCh[oldRI], newCh[newLI])){
+            VDom.patchVNode(oldCh[oldRI], newCh[newLI]);
+            parentElm.insertBefore(oldCh[oldRI].elm, oldCh[oldLI].elm);
+            oldRI--;
+            newLI++;
+          } 
+          else { // 若左右指针均未匹配上，在旧序列左右指针范围内通过key对新序列左指针对应节点进行查找
+            if(!keyMap){ // 辅助查找对象为空则，先填充辅助查找对象
+              keyMap = {};
+              for(let i = oldLI; i <= oldRI; i++){
+                const key = oldCh[i].key;
+                if(key !== undefined) keyMap[key] = i; // 简历旧序列中范围内key到指针位置索引的映射
+              }
+            }
+            const curOld = keyMap[newCh[newLI].key]; // 通过新序列左指针的key取得旧序列中相应key的索引位置
+            if(curOld === undefined){ // 若该位置不存在则直接将新VNode插入到真实DOM对应旧序列VNode节点之前的位置上
+              parentElm.insertBefore(VDom.createElement(newCh[newLI]), oldCh[oldLI].elm);
+            } else { // 若该位置存在，则说明找到与新序列对应的VNode，精细化比较并移动节点，将旧序列中对应位置置位undefined以便后续跳过该位置
+              const elmToMove = oldCh[curOld];
+              VDom.patchVNode(elmToMove, newCh[newLI]);
+              oldCh[curOld] = undefined;
+              parentElm.insertBefore(elmToMove.elm, oldCh[oldLI].elm);
+            }
+            newLI++; // 新VNode序列左指针处理完毕，右移一位
+          }
+        }
+        if(newLI <= newRI){ // 如果新序列中还有节点剩余，则说明旧序列先遍历完成，循环插入剩余的新节点
+          for(let i = newLI; i <= oldRI; i++){
+            parentElm.insertBefore(VDom.createElement(newCh[i]), oldCh[oldLI].elm);
+          }
+        } // 若是旧序列中还有节点剩余，则说明新序列先遍历完成，循环删除剩余的旧节点
+        else if(oldLI <= oldRI) {
+          for(let i = oldLI; i <= oldRI; i++){
+            if(oldCh[i]) {
+              parentElm.removeChild(oldCh[i].elm);
+            }
+          }
+        }
+      }
+      static test() { // 测试用例
+        // TODO:在测试用例中递归的调用VDom.h函数，此处可以继续优化
+        // VDom.h函数直接利用tokens生成VNode对象，假设文本节点和子节点不同时出现
+        const eVNode1 = VDom.h('ul', {}, [
+          VDom.h('li', {key:'A'}, 'A'),
+          VDom.h('li', {key:'B'}, 'B'),
+          VDom.h('li', {key:'C'}, 'C'),
+          VDom.h('li', {key:'D'}, 'D'),
+          VDom.h('li', {key:'E'}, 'E'),
+        ]);
+        const container = document.querySelector('#app');
+        const btn = document.querySelector('#btn');
+        VDom.patch(container, eVNode1); // diff算法并渲染到真实DOM上
+        const eVNode2 = VDom.h('ul', {}, [
+          VDom.h('li', {key:'Q'}, 'Q'),
+          VDom.h('li', {key:'T'}, 'T'),
+          VDom.h('li', {key:'A'}, 'A'),
+          VDom.h('li', {key:'B'}, 'B'),
+          VDom.h('li', {key:'Z'}, 'Z'),
+          VDom.h('li', {key:'C'}, 'C'),
+          VDom.h('li', {key:'D'}, 'D'),
+          VDom.h('li', {key:'E'}, 'E'),
+        ]);
+        btn.onclick = function() {
+          VDom.patch(eVNode1, eVNode2); // 触发事件并渲染真实DOM
+        }
+      }
+    }
+    class VNode {
+      constructor(sel, data, children, text, elm){
+        this.sel = sel; // 标签名
+        this.data = data; // 
+        this.children = children; // 子节点
+        this.text = text; // 文本节点
+        this.elm = elm; // 虚拟节点对应的真实元素
+        this.key = data.key; // key值
+      }
+    }
+    VDom.test();
+  </script>
+</body>
+</html>
