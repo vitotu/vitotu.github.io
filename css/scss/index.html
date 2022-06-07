@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>scss基础使用 | Vito&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/img/cat.jpg">
+    <meta name="description" content="vito的个人网站">
+    
+    <link rel="preload" href="/assets/css/0.styles.f26a208e.css" as="style"><link rel="preload" href="/assets/js/app.865205bf.js" as="script"><link rel="preload" href="/assets/js/2.4ef5b9b2.js" as="script"><link rel="preload" href="/assets/js/28.81342a86.js" as="script"><link rel="prefetch" href="/assets/js/10.581d6dae.js"><link rel="prefetch" href="/assets/js/11.a7d76691.js"><link rel="prefetch" href="/assets/js/12.21ed737d.js"><link rel="prefetch" href="/assets/js/13.667d59e4.js"><link rel="prefetch" href="/assets/js/14.35aac019.js"><link rel="prefetch" href="/assets/js/15.b8f8ed66.js"><link rel="prefetch" href="/assets/js/16.19490548.js"><link rel="prefetch" href="/assets/js/17.fb6c7807.js"><link rel="prefetch" href="/assets/js/18.fd349b19.js"><link rel="prefetch" href="/assets/js/19.dfee5b59.js"><link rel="prefetch" href="/assets/js/20.ddd4d919.js"><link rel="prefetch" href="/assets/js/21.a6a1e9cf.js"><link rel="prefetch" href="/assets/js/22.bcdb10cc.js"><link rel="prefetch" href="/assets/js/23.4fb862d2.js"><link rel="prefetch" href="/assets/js/24.5f7b8020.js"><link rel="prefetch" href="/assets/js/25.9dec166c.js"><link rel="prefetch" href="/assets/js/26.8956e945.js"><link rel="prefetch" href="/assets/js/27.7b217713.js"><link rel="prefetch" href="/assets/js/29.a032bd3c.js"><link rel="prefetch" href="/assets/js/3.93afe063.js"><link rel="prefetch" href="/assets/js/30.b4858c98.js"><link rel="prefetch" href="/assets/js/31.b8a21cc7.js"><link rel="prefetch" href="/assets/js/32.08f5ea48.js"><link rel="prefetch" href="/assets/js/33.f399c0e0.js"><link rel="prefetch" href="/assets/js/34.093e7c78.js"><link rel="prefetch" href="/assets/js/35.88328e27.js"><link rel="prefetch" href="/assets/js/36.1891ca71.js"><link rel="prefetch" href="/assets/js/37.61af714f.js"><link rel="prefetch" href="/assets/js/38.6ab9e1e4.js"><link rel="prefetch" href="/assets/js/39.92753654.js"><link rel="prefetch" href="/assets/js/4.5dc62aa0.js"><link rel="prefetch" href="/assets/js/40.c64298c0.js"><link rel="prefetch" href="/assets/js/41.dedd05f0.js"><link rel="prefetch" href="/assets/js/42.8891657a.js"><link rel="prefetch" href="/assets/js/43.b10742cf.js"><link rel="prefetch" href="/assets/js/44.ad7bb89d.js"><link rel="prefetch" href="/assets/js/45.44f6d8c9.js"><link rel="prefetch" href="/assets/js/46.7fa219e4.js"><link rel="prefetch" href="/assets/js/47.5ff1d32c.js"><link rel="prefetch" href="/assets/js/48.96c01609.js"><link rel="prefetch" href="/assets/js/49.c5aa9563.js"><link rel="prefetch" href="/assets/js/5.ccaee85b.js"><link rel="prefetch" href="/assets/js/50.ea5b24d6.js"><link rel="prefetch" href="/assets/js/51.56276163.js"><link rel="prefetch" href="/assets/js/52.43aecc2e.js"><link rel="prefetch" href="/assets/js/6.d29065cc.js"><link rel="prefetch" href="/assets/js/7.5999b7b3.js"><link rel="prefetch" href="/assets/js/8.75119314.js"><link rel="prefetch" href="/assets/js/9.987f9e51.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f26a208e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Vito's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/jsBase/" class="nav-link">
+  js基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/es6+/" class="nav-link">
+  es6+基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/jsPlus/" class="nav-link">
+  js进阶
+</a></li><li class="dropdown-item"><!----> <a href="/js/jsHand/" class="nav-link">
+  js手写系列
+</a></li><li class="dropdown-item"><!----> <a href="/js/typescript/" class="nav-link">
+  typescript
+</a></li><li class="dropdown-item"><h4>
+          js读书笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/jsAsync/" class="nav-link">
+  js异步编程
+</a></li><li class="dropdown-subitem"><a href="/js/jsDeep/" class="nav-link">
+  你不知道的js系列
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/vue2base/" class="nav-link">
+  vue2基础
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vue2plus/" class="nav-link">
+  vue2进阶
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vue3base/" class="nav-link">
+  vue3基础
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vueRouter/" class="nav-link">
+  vue router
+</a></li></ul></div></div><div class="nav-item"><a href="/html/" class="nav-link">
+  html
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="css" class="dropdown-title"><span class="title">css</span> <span class="arrow down"></span></button> <button type="button" aria-label="css" class="mobile-dropdown-title"><span class="title">css</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/css/css3/" class="nav-link">
+  图解css3
+</a></li><li class="dropdown-item"><!----> <a href="/css/css3plus/" class="nav-link">
+  css进阶
+</a></li><li class="dropdown-item"><!----> <a href="/css/scss/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  scss
+</a></li></ul></div></div><div class="nav-item"><a href="/browser/" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络通信
+</a></div><div class="nav-item"><a href="/linuxNote/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><a href="/devToolsNote/" class="nav-link">
+  开发工具
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="https://github.com/vitotu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github主页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/jsBase/" class="nav-link">
+  js基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/es6+/" class="nav-link">
+  es6+基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/jsPlus/" class="nav-link">
+  js进阶
+</a></li><li class="dropdown-item"><!----> <a href="/js/jsHand/" class="nav-link">
+  js手写系列
+</a></li><li class="dropdown-item"><!----> <a href="/js/typescript/" class="nav-link">
+  typescript
+</a></li><li class="dropdown-item"><h4>
+          js读书笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/jsAsync/" class="nav-link">
+  js异步编程
+</a></li><li class="dropdown-subitem"><a href="/js/jsDeep/" class="nav-link">
+  你不知道的js系列
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/vue2base/" class="nav-link">
+  vue2基础
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vue2plus/" class="nav-link">
+  vue2进阶
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vue3base/" class="nav-link">
+  vue3基础
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vueRouter/" class="nav-link">
+  vue router
+</a></li></ul></div></div><div class="nav-item"><a href="/html/" class="nav-link">
+  html
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="css" class="dropdown-title"><span class="title">css</span> <span class="arrow down"></span></button> <button type="button" aria-label="css" class="mobile-dropdown-title"><span class="title">css</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/css/css3/" class="nav-link">
+  图解css3
+</a></li><li class="dropdown-item"><!----> <a href="/css/css3plus/" class="nav-link">
+  css进阶
+</a></li><li class="dropdown-item"><!----> <a href="/css/scss/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  scss
+</a></li></ul></div></div><div class="nav-item"><a href="/browser/" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络通信
+</a></div><div class="nav-item"><a href="/linuxNote/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><a href="/devToolsNote/" class="nav-link">
+  开发工具
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="https://github.com/vitotu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github主页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>scss基础使用</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/css/scss/#简介" class="sidebar-link">简介</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/css/scss/#注释" class="sidebar-link">注释</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/css/scss/#变量" class="sidebar-link">变量</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/css/scss/#数据类型" class="sidebar-link">数据类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css/scss/#字符串" class="sidebar-link">字符串</a></li><li class="sidebar-sub-header"><a href="/css/scss/#数字" class="sidebar-link">数字</a></li><li class="sidebar-sub-header"><a href="/css/scss/#数组" class="sidebar-link">数组</a></li><li class="sidebar-sub-header"><a href="/css/scss/#颜色" class="sidebar-link">颜色</a></li></ul></li><li><a href="/css/scss/#运算" class="sidebar-link">运算</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css/scss/#数字运算" class="sidebar-link">数字运算</a></li><li class="sidebar-sub-header"><a href="/css/scss/#关系运算符" class="sidebar-link">关系运算符</a></li><li class="sidebar-sub-header"><a href="/css/scss/#相等运算符" class="sidebar-link">相等运算符</a></li><li class="sidebar-sub-header"><a href="/css/scss/#布尔运算符" class="sidebar-link">布尔运算符</a></li><li class="sidebar-sub-header"><a href="/css/scss/#颜色运算符" class="sidebar-link">颜色运算符</a></li><li class="sidebar-sub-header"><a href="/css/scss/#运算优先级" class="sidebar-link">运算优先级</a></li></ul></li><li><a href="/css/scss/#嵌套语法" class="sidebar-link">嵌套语法</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/css/scss/#杂货语法" class="sidebar-link">杂货语法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css/scss/#插值语法" class="sidebar-link">插值语法</a></li><li class="sidebar-sub-header"><a href="/css/scss/#父选择器" class="sidebar-link">父选择器&amp;</a></li><li class="sidebar-sub-header"><a href="/css/scss/#default" class="sidebar-link">!default</a></li><li class="sidebar-sub-header"><a href="/css/scss/#global" class="sidebar-link">!global</a></li><li class="sidebar-sub-header"><a href="/css/scss/#optional" class="sidebar-link">!optional</a></li></ul></li><li><a href="/css/scss/#rule指令" class="sidebar-link">@-Rule指令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css/scss/#import" class="sidebar-link">@import</a></li><li class="sidebar-sub-header"><a href="/css/scss/#media指令" class="sidebar-link">@media指令</a></li><li class="sidebar-sub-header"><a href="/css/scss/#extend继承" class="sidebar-link">@extend继承</a></li><li class="sidebar-sub-header"><a href="/css/scss/#混合" class="sidebar-link">混合</a></li></ul></li><li><a href="/css/scss/#控制指令" class="sidebar-link">控制指令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css/scss/#if" class="sidebar-link">if</a></li><li class="sidebar-sub-header"><a href="/css/scss/#for" class="sidebar-link">for</a></li><li class="sidebar-sub-header"><a href="/css/scss/#each" class="sidebar-link">@each</a></li><li class="sidebar-sub-header"><a href="/css/scss/#while" class="sidebar-link">@while</a></li></ul></li><li><a href="/css/scss/#函数指令" class="sidebar-link">函数指令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css/scss/#输出格式" class="sidebar-link">输出格式</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="scss基础使用"><a href="#scss基础使用" class="header-anchor">#</a> scss基础使用</h1> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>scss/sass是css的超集，类似与typescript和JavaScript的关系，最终将转换为css上线,其语法格式有scss和sass(使用“缩进”代替“花括号”)两种</p> <p>本笔记仅参考了中文网中的<a href="https://www.sass.hk/guide/" target="_blank" rel="noopener noreferrer">快速入门<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>和<a href="https://www.sass.hk/docs/" target="_blank" rel="noopener noreferrer">中文文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>两个部分，更详细的请参考<a href="https://sass-lang.com/documentation" target="_blank" rel="noopener noreferrer">英文版api<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="注释"><a href="#注释" class="header-anchor">#</a> 注释</h2> <p>多行注释<code>/* */</code>会被编译到css中，单行注释<code>//</code>则不会<br>
+带<code>!</code>号的多行注释</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token comment">/*!  
+  版权信息  
+*/</span>  
+</code></pre></div><p>通常用于加入版权信息，在处于压缩模式的css下也不会被删除</p> <h2 id="变量"><a href="#变量" class="header-anchor">#</a> 变量</h2> <p>变量以美元符号开头，赋值方法与 CSS 属性的写法一样</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token property"><span class="token variable">$width</span></span><span class="token punctuation">:</span> 1600px<span class="token punctuation">;</span>  
+<span class="token property"><span class="token variable">$pen-size</span></span><span class="token punctuation">:</span> 3em<span class="token punctuation">;</span>  
+<span class="token comment">// 直接使用变量名称调用变量  </span>
+<span class="token selector">#app </span><span class="token punctuation">{</span>  
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">$width</span><span class="token punctuation">;</span>  
+    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token variable">$pen-size</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+<span class="token comment">// 支持块级作用域  </span>
+<span class="token selector">#foo </span><span class="token punctuation">{</span>  
+  <span class="token property"><span class="token variable">$width</span></span><span class="token punctuation">:</span> 5em !global<span class="token punctuation">;</span> <span class="token comment">// !global将局部变量转换为全局变量  </span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">$width</span><span class="token punctuation">;</span> <span class="token comment">// 5em  </span>
+<span class="token punctuation">}</span>  
+  
+<span class="token selector">#bar </span><span class="token punctuation">{</span>  
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">$width</span><span class="token punctuation">;</span> <span class="token comment">// 5em  </span>
+<span class="token punctuation">}</span>  
+</code></pre></div><h2 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h2> <p>SassScript 支持 7 种主要的数据类型：</p> <ul><li>数字，<code>1, 2, 13, 10px</code></li> <li>字符串，有引号字符串与无引号字符串，<code>&quot;foo&quot;, 'bar', baz</code></li> <li>颜色，<code>blue, #04a3f9, rgba(255,0,0,0.5)</code></li> <li>布尔型，<code>true, false</code>，只有自身是false和null才会返回false，其他一切都将返回true</li> <li>空值，<code>null</code>，与任何类型进行算数运算</li> <li>数组 (list)，用空格或逗号作分隔符，<code>1.5em 1em 0 2em, Helvetica, Arial, sans-serif</code></li> <li>maps, 相当于 JavaScript 的 object，<code>(key1: value1, key2: value2)</code></li></ul> <p>SassScript 也支持其他 CSS 属性值，比如 Unicode 字符集，或 !important 声明。然而Sass 不会特殊对待这些属性值，一律视为无引号字符串。</p> <p><code>type-of($value)</code>判断数据类型</p> <h3 id="字符串"><a href="#字符串" class="header-anchor">#</a> 字符串</h3> <p>使用插值语法(模板字符串)<code>#{}</code>(interpolation)时，有引号字符串将被编译为无引号字符串，这样便于在mixin中引用选择器名</p> <h3 id="数字"><a href="#数字" class="header-anchor">#</a> 数字</h3> <p>带单位的数字，单位会和数字当做一个整体，进行算数运算</p> <h3 id="数组"><a href="#数组" class="header-anchor">#</a> 数组</h3> <p>参考<a href="https://sass-lang.com/documentation/modules/list" target="_blank" rel="noopener noreferrer">英文文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="颜色"><a href="#颜色" class="header-anchor">#</a> 颜色</h3> <p>支持颜色函数<br> <code>$color1: lighten($color, 15%);</code></p> <h2 id="运算"><a href="#运算" class="header-anchor">#</a> 运算</h2> <h3 id="数字运算"><a href="#数字运算" class="header-anchor">#</a> 数字运算</h3> <p>对于加法/减法运算,带有字符串类型的会变成拼接,其中减法会带着运算符拼接<br>
+a.纯数字：只要有单位，结果必有单位,不同单位之间会进行必要的转换<br>
+b.纯字符串：第一个字符串有无引号决定结果是否有引号<br>
+c数字和字符串：第一位有引号，结果必为引号；第一位对应数字非数字且最后一位带有引号，则结果必为引号</p> <p>乘除取余运算</p> <ul><li>乘法:</li></ul> <p>每个字段必须前部分为数字，且两个字段只能一个后部分是字符(因为此时后缀被当被单位看待了)。其余编译不通过</p> <ul><li>除法:</li></ul> <p><code>/</code> 在 CSS 中通常起到分隔数字的用途<br>
+以下三种情况 / 将被视为除法运算符号：</p> <blockquote><p>1.如果值，或值的一部分，是变量或者函数的返回值
+2.如果值被圆括号包裹<br>
+3.如果值是算数表达式的一部分</p></blockquote> <p>不会四舍五入，精确到小数点后5位<br>
+每个字段必须前部分为数字，且当前者只是单纯数字无单位时，后者(除数)后部分不能有字符。其余结果就按顺序去除空格后拼接起来。<br>
+(因为此时后缀被当被单位看待了)</p> <p>取余:<br>
+值与&quot;%&quot;之间必须要有空格，否则会被看做字符串</p> <h3 id="关系运算符"><a href="#关系运算符" class="header-anchor">#</a> 关系运算符</h3> <p>大前提：两端必须为数字 或 前部分数字后部分字符</p> <h3 id="相等运算符"><a href="#相等运算符" class="header-anchor">#</a> 相等运算符</h3> <p>前部分为不带引号数字时，对比的仅仅是数字部分；反之，忽略引号，要求字符一一对应</p> <h3 id="布尔运算符"><a href="#布尔运算符" class="header-anchor">#</a> 布尔运算符</h3> <p>值与&quot;and&quot;、&quot;or&quot;和&quot;not&quot;之间必须要有空格，否则会被看做字符</p> <h3 id="颜色运算符"><a href="#颜色运算符" class="header-anchor">#</a> 颜色运算符</h3> <p>颜色与颜色之间运算是分段计算进行的，也就是分别计算r、g、b部分的值<br>
+颜色值与数字之间是分段分别与数字进行运算<br>
+RGB和HSL,如果颜色值包含alpha channel（rgba或hsla两种颜色值），必须拥有相等的alpha值才能进行运算，因为算术运算不会作用于alpha值。</p> <h3 id="运算优先级"><a href="#运算优先级" class="header-anchor">#</a> 运算优先级</h3> <p>1、<code>()</code><br>
+2、<code>*</code>、<code>/</code>、<code>%</code><br>
+3、<code>+</code>、<code>-</code><br>
+4、<code>&gt;</code> 、<code>&lt;</code>、<code>&gt;=</code>、<code>&lt;=</code></p> <h2 id="嵌套语法"><a href="#嵌套语法" class="header-anchor">#</a> 嵌套语法</h2> <p>scss选择器可嵌套书写</p> <p>选择器嵌套时，其嵌套处理逻辑类似于外层选择器与内层拼接，因此跨层次嵌套必须书写中间层<br>
+对于特殊的<a href="#%E7%88%B6%E9%80%89%E6%8B%A9%E5%99%A8">父选择器</a><code>&amp;</code>符号将被替换为父选择器名称<br>
+同样<code>&gt; + ~</code>选择器和群组选择器也支持</p> <p>属性嵌套时：</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.funky </span><span class="token punctuation">{</span>  
+  <span class="token selector">font: </span><span class="token punctuation">{</span>  
+    <span class="token property">family</span><span class="token punctuation">:</span> fantasy<span class="token punctuation">;</span>  
+    <span class="token property">size</span><span class="token punctuation">:</span> 30em<span class="token punctuation">;</span>  
+    <span class="token property">weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>  
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  
+<span class="token comment">/*  
+被编译为  
+.funky {  
+  font-family: fantasy;  
+  font-size: 30em;  
+  font-weight: bold; }  
+*/</span>  
+</code></pre></div><p><code>:</code>符号将被转义为<code>-</code></p> <h2 id="杂货语法"><a href="#杂货语法" class="header-anchor">#</a> 杂货语法</h2> <p>占位符选择器,以<code>%</code>开头的选择器,不选取任何元素,通常用于继承等场景</p> <h3 id="插值语法"><a href="#插值语法" class="header-anchor">#</a> 插值语法</h3> <p>类似于模板字符串<br>
+通过 #{} 插值语句可以在选择器、属性名和属性值中使用变量。</p> <h3 id="父选择器"><a href="#父选择器" class="header-anchor">#</a> 父选择器&amp;</h3> <p>更接近于指向当前元素</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">a </span><span class="token punctuation">{</span>  
+    <span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>  
+    <span class="token selector"><span class="token parent important">&amp;</span>:hover</span><span class="token punctuation">{</span>  
+        <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+    <span class="token selector"><span class="token parent important">&amp;</span>:active</span><span class="token punctuation">{</span>  
+        <span class="token property">color</span><span class="token punctuation">:</span> blank<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  
+</code></pre></div><h3 id="default"><a href="#default" class="header-anchor">#</a> <code>!default</code></h3> <p>设置变量默认值,变量是null空值时将视为未被!default赋值</p> <h3 id="global"><a href="#global" class="header-anchor">#</a> <code>!global</code></h3> <p>将局部变量提升为全局变量</p> <h3 id="optional"><a href="#optional" class="header-anchor">#</a> <code>!optional</code></h3> <p>当@extend相关代码出现语法错误时，编译器可能会给我们”乱”编译为css，我们加上这个参数可以在出现问题后不让他编译该部分代码</p> <h2 id="rule指令"><a href="#rule指令" class="header-anchor">#</a> @-Rule指令</h2> <h3 id="import"><a href="#import" class="header-anchor">#</a> <code>@import</code></h3> <p>仅可导入scss/sass文件，若传入css或url等参数将被作为普通的css语句。<br>
+若不希望将导入的scss文件独立编译为CSS只需要在文件名前添加下划线，但导入语句中却不需要添加下划线，如：<br>
+文件名_colors.scss，导入<code>@import &quot;colors&quot;;</code></p> <p>嵌套的代码中导入，对应的被导入代码将只在局部作用域生效。不可以在混合指令(mixin)或控制指令(control directives)中嵌套@import</p> <h3 id="media指令"><a href="#media指令" class="header-anchor">#</a> <code>@media</code>指令</h3> <p>与CSS中用法一样，但允许其在CSS规则中嵌套<br>
+如果 @media 嵌套在 CSS 规则内，编译时，@media 将被编译到文件的最外层，包含嵌套的父选择器</p> <h3 id="extend继承"><a href="#extend继承" class="header-anchor">#</a> <code>@extend</code>继承</h3> <p><strong style="color:red;">继承的基本原理类似于：<code>.seriousError @extend .error</code>，那么样式表中的任何一处<code>.error</code>都用<code>.error.seriousError</code>这一选择器组进行替换。</strong></p> <p>.seriousError不仅会继承.error自身的所有样式，任何跟.error有关的组合选择器样式也会被.seriousError以组合选择器的形式继承</p> <p>不要继承后代选择器,如:</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">#admin .tabbar a </span><span class="token punctuation">{</span>  
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+<span class="token selector">#demo .overview .fakelink </span><span class="token punctuation">{</span>  
+  <span class="token keyword">@extend</span> a<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+</code></pre></div><p>因为后代选择器之间的层级不确定,scss会根据不同的层级组合生成多种选择器组合,上述代码编译后会生成:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">#admin .tabbar a,  
+#admin .tabbar #demo .overview .fakelink,  
+#demo .overview #admin .tabbar .fakelink</span> <span class="token punctuation">{</span>  
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span> <span class="token punctuation">}</span>  
+</code></pre></div><p>在<code>@media</code>中不可继承外部的代码块</p> <h3 id="混合"><a href="#混合" class="header-anchor">#</a> 混合</h3> <p><code>@mixin</code>给一大段样式赋予一个名字,通过<code>@include</code>引用对应的混合器,<code>.</code>调用会把混合器中的所有样式提取出来放在@include被调用的地方.</p> <p><strong style="color:red;">由于混合器是替换代码的方式调用,因此滥用可能会导致css文件过大</strong></p> <p>混合器可以以类似函数的方式定义参数，给<code>@include</code>调用,如下是使用了默认参数的混合器</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@mixin</span> <span class="token function">link-colors</span><span class="token punctuation">(</span>  
+    <span class="token variable">$normal</span><span class="token punctuation">,</span>  
+    <span class="token property"><span class="token variable">$hover</span></span><span class="token punctuation">:</span> <span class="token variable">$normal</span><span class="token punctuation">,</span>  
+    <span class="token property"><span class="token variable">$visited</span></span><span class="token punctuation">:</span> <span class="token variable">$normal</span>  
+  <span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$normal</span><span class="token punctuation">;</span>  
+  <span class="token selector"><span class="token parent important">&amp;</span>:hover </span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$hover</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  
+  <span class="token selector"><span class="token parent important">&amp;</span>:visited </span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$visited</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  
+<span class="token comment">// 调用时可以这样调用  </span>
+<span class="token keyword">@include</span> <span class="token function">link-colors</span><span class="token punctuation">(</span>red<span class="token punctuation">)</span>  
+</code></pre></div><p>当不确定有多少个参数时,可以使用类似与es6中的<code>...</code>标志符，对参数变量声明(<code>@include</code>时也可使用该标志符，效果类似与es6)，如下：</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@mixin</span> <span class="token function">box-shadow</span><span class="token punctuation">(</span><span class="token variable">$shadows</span>...<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+  <span class="token property">-moz-box-shadow</span><span class="token punctuation">:</span> <span class="token variable">$shadows</span><span class="token punctuation">;</span>  
+  <span class="token property">-webkit-box-shadow</span><span class="token punctuation">:</span> <span class="token variable">$shadows</span><span class="token punctuation">;</span>  
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token variable">$shadows</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+<span class="token selector">.shadows </span><span class="token punctuation">{</span>  
+  <span class="token keyword">@include</span> <span class="token function">box-shadow</span><span class="token punctuation">(</span>0px 4px 5px #666<span class="token punctuation">,</span> 2px 6px 10px #999<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+  
+<span class="token comment">// 编译为  </span>
+<span class="token selector">.shadowed </span><span class="token punctuation">{</span>  
+  <span class="token property">-moz-box-shadow</span><span class="token punctuation">:</span> 0px 4px 5px #666<span class="token punctuation">,</span> 2px 6px 10px #999<span class="token punctuation">;</span>  
+  <span class="token property">-webkit-box-shadow</span><span class="token punctuation">:</span> 0px 4px 5px #666<span class="token punctuation">,</span> 2px 6px 10px #999<span class="token punctuation">;</span>  
+  <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0px 4px 5px #666<span class="token punctuation">,</span> 2px 6px 10px #999<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+</code></pre></div><h2 id="控制指令"><a href="#控制指令" class="header-anchor">#</a> 控制指令</h2> <h3 id="if"><a href="#if" class="header-anchor">#</a> if</h3> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@if</span> #<span class="token punctuation">{</span>条件<span class="token punctuation">}</span> <span class="token punctuation">{</span>  
+  <span class="token comment">//业务代码  </span>
+<span class="token punctuation">}</span> <span class="token keyword">@else if</span> #<span class="token punctuation">{</span>条件<span class="token punctuation">}</span> <span class="token punctuation">{</span>  
+  <span class="token comment">// 业务代码  </span>
+<span class="token punctuation">}</span> <span class="token keyword">@else</span> <span class="token punctuation">{</span>  
+  <span class="token comment">// 业务代码  </span>
+<span class="token punctuation">}</span>  
+</code></pre></div><h3 id="for"><a href="#for" class="header-anchor">#</a> for</h3> <p>指令包含<br> <code>@for $var from &lt;start&gt; through &lt;end&gt;</code>和<br> <code>@for $var from &lt;start&gt; to &lt;end&gt;</code>两种形式<br>
+两种<code>&lt;start&gt;和&lt;end&gt;</code>都必须为整数值，前者包含end而后者不含</p> <h3 id="each"><a href="#each" class="header-anchor">#</a> <code>@each</code></h3> <p>指令格式为<code>@each $var in &lt;list&gt;</code>,<code>&lt;list&gt;</code>是一连串的值(值列表)，与js类似的迭代，可多值同时迭代，或迭代map</p> <h3 id="while"><a href="#while" class="header-anchor">#</a> <code>@while</code></h3> <p>while循环直到条件满足</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token keyword">@while</span> #<span class="token punctuation">{</span>condition<span class="token punctuation">}</span> <span class="token punctuation">{</span>  
+  <span class="token comment">// 业务代码  </span>
+<span class="token punctuation">}</span>  
+</code></pre></div><h2 id="函数指令"><a href="#函数指令" class="header-anchor">#</a> 函数指令</h2> <p>支持自定义函数，并在属性值或script中使用;</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token property"><span class="token variable">$grid-width</span></span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>  
+<span class="token property"><span class="token variable">$gutter-width</span></span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>  
+  
+<span class="token keyword">@function</span> <span class="token function">grid-width</span><span class="token punctuation">(</span><span class="token variable">$n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+  <span class="token keyword">@return</span> <span class="token variable">$n</span> <span class="token operator">*</span> <span class="token variable">$grid-width</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token variable">$n</span> <span class="token operator">-</span> 1<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token variable">$gutter-width</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+  
+<span class="token selector">#sidebar </span><span class="token punctuation">{</span> <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">grid-width</span><span class="token punctuation">(</span>5<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>  
+</code></pre></div><h3 id="输出格式"><a href="#输出格式" class="header-anchor">#</a> 输出格式</h3> <p>此部分实用性不强，参考<a href="https://www.sass.hk/docs/" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/6/2022, 11:49:25 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.865205bf.js" defer></script><script src="/assets/js/2.4ef5b9b2.js" defer></script><script src="/assets/js/28.81342a86.js" defer></script>
+  </body>
+</html>
