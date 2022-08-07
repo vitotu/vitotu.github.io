@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue2基础使用 | Vito&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/img/cat.jpg">
+    <meta name="description" content="vito的个人网站">
+    
+    <link rel="preload" href="/assets/css/0.styles.4b836ad2.css" as="style"><link rel="preload" href="/assets/js/app.3da9e175.js" as="script"><link rel="preload" href="/assets/js/2.416a2b3a.js" as="script"><link rel="preload" href="/assets/js/47.fee68411.js" as="script"><link rel="prefetch" href="/assets/js/10.1b1391e5.js"><link rel="prefetch" href="/assets/js/11.f3443918.js"><link rel="prefetch" href="/assets/js/12.6bbbcf18.js"><link rel="prefetch" href="/assets/js/13.30727c8d.js"><link rel="prefetch" href="/assets/js/14.6e0ab037.js"><link rel="prefetch" href="/assets/js/15.901efe6c.js"><link rel="prefetch" href="/assets/js/16.14ff5c65.js"><link rel="prefetch" href="/assets/js/17.3dd49f67.js"><link rel="prefetch" href="/assets/js/18.7db9ef95.js"><link rel="prefetch" href="/assets/js/19.2cce5a1b.js"><link rel="prefetch" href="/assets/js/20.45fd865f.js"><link rel="prefetch" href="/assets/js/21.d54447ff.js"><link rel="prefetch" href="/assets/js/22.2a4f5f15.js"><link rel="prefetch" href="/assets/js/23.99f320db.js"><link rel="prefetch" href="/assets/js/24.63f56477.js"><link rel="prefetch" href="/assets/js/25.ad20daa3.js"><link rel="prefetch" href="/assets/js/26.600baa9c.js"><link rel="prefetch" href="/assets/js/27.69577e36.js"><link rel="prefetch" href="/assets/js/28.e01661ff.js"><link rel="prefetch" href="/assets/js/29.01f7c6b3.js"><link rel="prefetch" href="/assets/js/3.a9571a28.js"><link rel="prefetch" href="/assets/js/30.90ec2eec.js"><link rel="prefetch" href="/assets/js/31.615566f8.js"><link rel="prefetch" href="/assets/js/32.73929a89.js"><link rel="prefetch" href="/assets/js/33.6789f867.js"><link rel="prefetch" href="/assets/js/34.bb0cc5e6.js"><link rel="prefetch" href="/assets/js/35.3b37fa7a.js"><link rel="prefetch" href="/assets/js/36.1dc5250e.js"><link rel="prefetch" href="/assets/js/37.dcfd9d92.js"><link rel="prefetch" href="/assets/js/38.936bdb87.js"><link rel="prefetch" href="/assets/js/39.74e561a3.js"><link rel="prefetch" href="/assets/js/4.a694757d.js"><link rel="prefetch" href="/assets/js/40.3ef855cd.js"><link rel="prefetch" href="/assets/js/41.80e5fd23.js"><link rel="prefetch" href="/assets/js/42.09cfae79.js"><link rel="prefetch" href="/assets/js/43.42089e4d.js"><link rel="prefetch" href="/assets/js/44.aa63df3f.js"><link rel="prefetch" href="/assets/js/45.d2383d4a.js"><link rel="prefetch" href="/assets/js/46.6517a74f.js"><link rel="prefetch" href="/assets/js/48.7099c06b.js"><link rel="prefetch" href="/assets/js/49.11a61067.js"><link rel="prefetch" href="/assets/js/5.959c0153.js"><link rel="prefetch" href="/assets/js/50.35f6bd36.js"><link rel="prefetch" href="/assets/js/51.70247093.js"><link rel="prefetch" href="/assets/js/52.045bd7cf.js"><link rel="prefetch" href="/assets/js/53.e9d910fe.js"><link rel="prefetch" href="/assets/js/54.0dca993e.js"><link rel="prefetch" href="/assets/js/55.951a9f9b.js"><link rel="prefetch" href="/assets/js/6.6fa3e33e.js"><link rel="prefetch" href="/assets/js/7.ca0fdacb.js"><link rel="prefetch" href="/assets/js/8.c75a0a84.js"><link rel="prefetch" href="/assets/js/9.e6765e4a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4b836ad2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Vito's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/jsBase.html" class="nav-link">
+  js基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/es6+/" class="nav-link">
+  es6+基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/jsPlus.html" class="nav-link">
+  js进阶
+</a></li><li class="dropdown-item"><!----> <a href="/js/jsHand.html" class="nav-link">
+  js手写系列
+</a></li><li class="dropdown-item"><!----> <a href="/js/typescript/" class="nav-link">
+  typescript
+</a></li><li class="dropdown-item"><h4>
+          js读书笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/jsAsync/" class="nav-link">
+  js异步编程
+</a></li><li class="dropdown-subitem"><a href="/js/jsDeep/" class="nav-link">
+  你不知道的js系列
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/vue2base.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  vue2基础
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vue2plus/" class="nav-link">
+  vue2进阶
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vue3base/" class="nav-link">
+  vue3基础
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vueRouter/" class="nav-link">
+  vue router
+</a></li></ul></div></div><div class="nav-item"><a href="/html/" class="nav-link">
+  html
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="css" class="dropdown-title"><span class="title">css</span> <span class="arrow down"></span></button> <button type="button" aria-label="css" class="mobile-dropdown-title"><span class="title">css</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/css/css3/" class="nav-link">
+  图解css3
+</a></li><li class="dropdown-item"><!----> <a href="/css/css3plus/" class="nav-link">
+  css进阶
+</a></li><li class="dropdown-item"><!----> <a href="/css/scss/" class="nav-link">
+  scss
+</a></li></ul></div></div><div class="nav-item"><a href="/browser/" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络通信
+</a></div><div class="nav-item"><a href="/linuxNote/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发构建工具" class="dropdown-title"><span class="title">开发构建工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发构建工具" class="mobile-dropdown-title"><span class="title">开发构建工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devToolsNote/npm-note.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/webpackNote.html" class="nav-link">
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/webpack5Note.html" class="nav-link">
+  webpack5
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法" class="dropdown-title"><span class="title">算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="算法" class="mobile-dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/tsClassicTop10SortAlgorithm.html" class="nav-link">
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/tsSword4Offer.html" class="nav-link">
+  剑指offer
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/common.html" class="nav-link">
+  常见算法
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/10sortedAlgorithm.html" class="nav-link">
+  排序算法python
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/python_sword_for_offer.html" class="nav-link">
+  剑指offer-python
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/vitotu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github主页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/js/jsBase.html" class="nav-link">
+  js基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/es6+/" class="nav-link">
+  es6+基础
+</a></li><li class="dropdown-item"><!----> <a href="/js/jsPlus.html" class="nav-link">
+  js进阶
+</a></li><li class="dropdown-item"><!----> <a href="/js/jsHand.html" class="nav-link">
+  js手写系列
+</a></li><li class="dropdown-item"><!----> <a href="/js/typescript/" class="nav-link">
+  typescript
+</a></li><li class="dropdown-item"><h4>
+          js读书笔记
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/js/jsAsync/" class="nav-link">
+  js异步编程
+</a></li><li class="dropdown-subitem"><a href="/js/jsDeep/" class="nav-link">
+  你不知道的js系列
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/vue2base.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  vue2基础
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vue2plus/" class="nav-link">
+  vue2进阶
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vue3base/" class="nav-link">
+  vue3基础
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vuex/" class="nav-link">
+  vuex
+</a></li><li class="dropdown-item"><!----> <a href="/vue/vueRouter/" class="nav-link">
+  vue router
+</a></li></ul></div></div><div class="nav-item"><a href="/html/" class="nav-link">
+  html
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="css" class="dropdown-title"><span class="title">css</span> <span class="arrow down"></span></button> <button type="button" aria-label="css" class="mobile-dropdown-title"><span class="title">css</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/css/css3/" class="nav-link">
+  图解css3
+</a></li><li class="dropdown-item"><!----> <a href="/css/css3plus/" class="nav-link">
+  css进阶
+</a></li><li class="dropdown-item"><!----> <a href="/css/scss/" class="nav-link">
+  scss
+</a></li></ul></div></div><div class="nav-item"><a href="/browser/" class="nav-link">
+  浏览器
+</a></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络通信
+</a></div><div class="nav-item"><a href="/linuxNote/" class="nav-link">
+  Linux
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发构建工具" class="dropdown-title"><span class="title">开发构建工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发构建工具" class="mobile-dropdown-title"><span class="title">开发构建工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/devToolsNote/npm-note.html" class="nav-link">
+  npm
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/webpackNote.html" class="nav-link">
+  webpack基础
+</a></li><li class="dropdown-item"><!----> <a href="/webpack/webpack5Note.html" class="nav-link">
+  webpack5
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法" class="dropdown-title"><span class="title">算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="算法" class="mobile-dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/tsClassicTop10SortAlgorithm.html" class="nav-link">
+  排序算法
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/tsSword4Offer.html" class="nav-link">
+  剑指offer
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/common.html" class="nav-link">
+  常见算法
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/10sortedAlgorithm.html" class="nav-link">
+  排序算法python
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/python_sword_for_offer.html" class="nav-link">
+  剑指offer-python
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/vitotu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github主页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vue2基础使用</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue/vue2base.html#模板语法" class="sidebar-link">模板语法</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#响应式" class="sidebar-link">响应式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#data配置项" class="sidebar-link">data配置项</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#根实例vm" class="sidebar-link">根实例vm</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#事件处理" class="sidebar-link">事件处理</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#绑定样式" class="sidebar-link">绑定样式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#列表渲染" class="sidebar-link">列表渲染</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#表单" class="sidebar-link">表单</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#过滤器" class="sidebar-link">过滤器</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#指令" class="sidebar-link">指令</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#生命周期" class="sidebar-link">生命周期</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#组件化编程" class="sidebar-link">组件化编程</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#组件间通信的方式" class="sidebar-link">组件间通信的方式</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#脚手架" class="sidebar-link">脚手架</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#组件属性及配置" class="sidebar-link">组件属性及配置</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#插槽" class="sidebar-link">插槽</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#cookbook" class="sidebar-link">Cookbook</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#添加实例property" class="sidebar-link">添加实例property</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#表单校验" class="sidebar-link">表单校验</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#vue-cli" class="sidebar-link">vue-cli</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#vue-lib模式打包生成umd文件笔记" class="sidebar-link">vue lib模式打包生成umd文件笔记</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vue2base.html#关联问题js模块化历史" class="sidebar-link">关联问题js模块化历史</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue2基础使用"><a href="#vue2基础使用" class="header-anchor">#</a> vue2基础使用</h1> <p>参考尚硅谷的vue2教程
+视频教程<a href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=1" target="_blank" rel="noopener noreferrer">地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="模板语法"><a href="#模板语法" class="header-anchor">#</a> 模板语法</h2> <p>在html中书写<code></code>,<code>v-指令:属性='表达式'</code>等语法样式，这些语法样式由Vue实例来解析。这种方式被成为模板语法</p> <h2 id="响应式"><a href="#响应式" class="header-anchor">#</a> 响应式</h2> <ul><li>响应式基础特性
+<ol><li>Vue2在组件实例上设置属性,代理访问data配置项中的数据(vm.key与vm._data.key同源).</li> <li>data配置项中数组对象的响应式是通过数组包装Array类型的原生<code>push()</code>、<code>pop()</code>、<code>shift()</code>、<code>unshift()</code>、<code>splice()</code>、<code>sort()</code>、<code>reverse()</code>等函数来实现的，因此在修改数组类型的数据时，想要响应式的更新都各调用处，需要使用数组方法来修改数组而不是直接使用索引。</li> <li>data配置项中的对象都设置的了数据代理，新加的属性想要获得响应式，需要通过<code>Vue.set(target，propertyName/index，value)</code>方法或方法内<code>vm.$set(target，propertyName/index，value)</code>进行设置</li> <li>特别注意：<code>Vue.set()</code>和<code>vm.$set()</code>不能给vm 或 vm的根数据对象 添加属性！！！</li></ol></li></ul> <h2 id="data配置项"><a href="#data配置项" class="header-anchor">#</a> data配置项</h2> <p>在vm实例中data的配置项可以写成对象形式,但在组件中由于组件的复用特性,data对象必须写成回调函数的形式</p> <p>Vue获取配置项中的data对象后,对data对象进行代理(深度遍历对象给属性添加getter,setter等),然后将改造后的data对象赋给vm实例的<code>_data</code>属性,同时覆盖原有的对象引用,伪代码表示如下:</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// data对象  </span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> a  
+<span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>  
+  <span class="token literal-property property">data</span><span class="token operator">:</span>a <span class="token comment">// 省略其他配置项  </span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>  
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_data <span class="token operator">===</span> a<span class="token punctuation">)</span> <span class="token comment">// true  </span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_data <span class="token operator">===</span> b<span class="token punctuation">)</span> <span class="token comment">// false  </span>
+<span class="token comment">// 原有的对象引用a被覆盖了,因此不等于b对象  </span>
+</code></pre></div><h2 id="根实例vm"><a href="#根实例vm" class="header-anchor">#</a> 根实例vm</h2> <p>vm取名字'mvvm'模型中的最后两个字符vm;model(数据),view(视图html),view-model(视图模型之间的映射)</p> <h2 id="事件处理"><a href="#事件处理" class="header-anchor">#</a> 事件处理</h2> <ul><li>Vue中的事件修饰符：</li></ul> <ol><li>prevent：阻止默认事件（常用）；</li> <li>stop：阻止事件冒泡（常用）；</li> <li>once：事件只触发一次（常用）；</li> <li>capture：使用事件的捕获模式；</li> <li>self：只有event.target是当前操作的元素时才触发事件；</li> <li>passive：事件的默认行为立即执行，无需等待事件回调执行完毕；</li> <li>native: 使用浏览器原生事件</li></ol> <ul><li>按键</li></ul> <ol><li><p>Vue中常用的按键别名：<br>
+回车 =&gt; enter<br>
+删除 =&gt; delete (捕获“删除”和“退格”键)<br>
+退出 =&gt; esc<br>
+空格 =&gt; space<br>
+换行 =&gt; tab (特殊，必须配合keydown去使用)<br>
+上 =&gt; up<br>
+下 =&gt; down<br>
+左 =&gt; left<br>
+右 =&gt; right</p></li> <li><p>Vue未提供别名的按键，可以使用按键原始的key值去绑定，但注意要转为kebab-case（短横线命名）</p></li> <li><p>系统修饰键（用法特殊）：ctrl、alt、shift、meta<br>
+(1).配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发。<br>
+(2).配合keydown使用：正常触发事件。</p></li> <li><p>也可以使用keyCode去指定具体的按键（不推荐）</p></li> <li><p>Vue.config.keyCodes.自定义键名 = 键码，可以去定制按键别名</p></li></ol> <ul><li>自定义事件</li></ul> <p>自定义事件也可用于父子组件通信<br>
+标签中绑定自定义事件的方式:<br> <code>&lt;MyComponent @自定义事件='处理函数'/&gt;</code>或</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>MyComponent</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>myComponent<span class="token punctuation">'</span></span><span class="token punctuation">/&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">  
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myComponent<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'自定义事件'</span><span class="token punctuation">,</span> 处理函数<span class="token punctuation">)</span>   
+  <span class="token comment">// 触发后处理函数的调用方仍然是该组件,  </span>
+  <span class="token comment">// 若采用箭头函数,则无法读取当前组件的实例this,因此推荐使用在methods中定义的函数  </span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>myComponent<span class="token punctuation">.</span><span class="token function">$once</span><span class="token punctuation">(</span><span class="token string">'自定义事件a'</span><span class="token punctuation">,</span> 处理函数<span class="token punctuation">)</span> <span class="token comment">// 仅触发一次  </span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>  
+</code></pre></div><p>被绑上自定义事件的子组件可触发对应的事件并回传数据,如:<code>this.$emit('自定义事件a',params)</code></p> <p>子组件在被销毁前需在beforeDestroy生命周期函数中进行解绑自定义事件<code>beforeDestroy(){this.$off(String单个事件|Array多个事件|不传参默认所有事件)}</code></p> <ul><li>事件总线</li></ul> <p>由于直接使用自定义事件在组件直接进行通讯有局限性,事件总线通过在vue原型上绑定vue根实例vm作为公共组件<code>$bus</code>,在<code>$bus</code>上绑定和触发事件来实现任意组件间的通信,如下代码</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">// 原型上$bus绑定根实例vm  </span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>  
+ <span class="token literal-property property">el</span><span class="token operator">:</span><span class="token string">'#app'</span><span class="token punctuation">,</span>  
+ <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token parameter">h</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">,</span>  
+ <span class="token function">beforeCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+  <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$bus <span class="token operator">=</span> <span class="token keyword">this</span> <span class="token comment">//安装全局事件总线  </span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>  
+<span class="token punctuation">}</span><span class="token punctuation">)</span>  
+<span class="token comment">// 任意组件上绑定事件,解绑时请慎用解绑全部事件的写法  </span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$bus<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>  
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我是School组件，收到了数据'</span><span class="token punctuation">,</span>data<span class="token punctuation">)</span>  
+<span class="token punctuation">}</span><span class="token punctuation">)</span>  
+<span class="token comment">// 另一组件上触发  </span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$bus<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>  
+</code></pre></div><p>与事件总线相类似的还有使用第三方库pubsub-js的消息发布订阅方式，用法与事件总线类似</p> <h2 id="绑定样式"><a href="#绑定样式" class="header-anchor">#</a> 绑定样式</h2> <ol><li>class样式<br>
+写法<code>:class=&quot;xxx&quot;</code> xxx可以是字符串、对象、数组。<br>
+字符串写法适用于：类名不确定，要动态获取。<br>
+对象写法适用于：要绑定多个样式，个数不确定，名字也不确定。<br>
+数组写法适用于：要绑定多个样式，个数确定，名字也确定，但不确定用不用。</li> <li>style样式<br> <code>:style=&quot;{fontSize: xxx}&quot;</code>其中xxx是动态值。<br> <code>:style=&quot;[a,b]&quot;</code>其中a、b是样式对象。</li></ol> <h2 id="列表渲染"><a href="#列表渲染" class="header-anchor">#</a> 列表渲染</h2> <p>可遍历：数组、对象、字符串（用的很少）、指定次数（用的很少）</p> <blockquote><p>react、vue中的key有什么作用？（key的内部原理）</p></blockquote> <ol><li>虚拟DOM中key的作用：<br>
+key是虚拟DOM对象的标识，当数据发生变化时，Vue会根据【新数据】生成【新的虚拟DOM】,
+随后Vue进行【新虚拟DOM】与【旧虚拟DOM】的差异比较，比较规则如下：</li> <li>对比规则：<br>
+(1). 旧虚拟DOM中找到了与新虚拟DOM相同的key：<br>
+①.若虚拟DOM中内容没变, 直接使用之前的真实DOM！<br>
+②.若虚拟DOM中内容变了, 则生成新的真实DOM，随后替换掉页面中之前的真实DOM。<br>
+(2). 旧虚拟DOM中未找到与新虚拟DOM相同的key<br>
+创建新的真实DOM，随后渲染到到页面。</li> <li>用index作为key可能会引发的问题：<br>
+a. 若对数据进行：逆序添加、逆序删除等破坏顺序操作:<br>
+会产生没有必要的真实DOM更新 ==&gt; 界面效果没问题, 但效率低。<br>
+b. 如果结构中还包含输入类的DOM：<br>
+会产生错误DOM更新 ==&gt; 界面有问题。</li> <li>开发中如何选择key?:<br>
+a. 最好使用每条数据的唯一标识作为key, 比如id、手机号、身份证号、学号等唯一值。<br>
+b. 如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，仅用于渲染列表用于展示，<br>
+使用index作为key是没有问题的。</li></ol> <h2 id="表单"><a href="#表单" class="header-anchor">#</a> 表单</h2> <p>收集表单数据：<br>
+若：<code>&lt;input type=&quot;text&quot;/&gt;</code>，则v-model收集的是value值，用户输入的就是value值。<br>
+若：<code>&lt;input type=&quot;radio&quot;/&gt;</code>，则v-model收集的是value值，且要给标签配置value值。<br>
+若：<code>&lt;input type=&quot;checkbox&quot;/&gt;</code><br>
+1.没有配置input的value属性，那么收集的就是checked（勾选 or 未勾选，是布尔值）<br>
+2.配置input的value属性:<br>
+(1)v-model的初始值是非数组，那么收集的就是checked（勾选 or 未勾选，是布尔值）<br>
+(2)v-model的初始值是数组，那么收集的的就是value组成的数组<br>
+备注：v-model的三个修饰符：<br>
+lazy：失去焦点再收集数据<br>
+number：输入字符串转为有效的数字<br>
+trim：输入首尾空格过滤</p> <h2 id="过滤器"><a href="#过滤器" class="header-anchor">#</a> 过滤器</h2> <p>过滤器：<br>
+定义：对要显示的数据进行特定格式化后再显示（适用于一些简单逻辑的处理）。<br>
+语法：<br>
+1.注册过滤器：Vue.filter(name,callback) 或 new Vue{filters:{}}<br>
+2.使用过滤器：  或  v-bind:属性 = &quot;xxx | 过滤器名&quot;<br>
+备注：<br>
+1.过滤器也可以接收额外参数、多个过滤器也可以串联<br>
+2.并没有改变原本的数据, 是产生新的对应的数据</p> <h2 id="指令"><a href="#指令" class="header-anchor">#</a> 指令</h2> <ul><li>常用的指令：<br>
+v-bind : 单向绑定解析表达式, 可简写为 <code>:xxx</code><br>
+v-model : 双向数据绑定<br>
+v-for   : 遍历数组/对象/字符串<br>
+v-on    : 绑定事件监听, 可简写为@<br>
+v-if    : 条件渲染（动态控制节点是否存存在）<br>
+v-else  : 条件渲染（动态控制节点是否存存在）<br>
+v-show  : 条件渲染 (动态控制节点是否展示)</li> <li>v-text指令：<br>
+1.作用：向其所在的节点中渲染文本内容。<br>
+2.与插值语法的区别：v-text会替换掉节点中的内容，则不会。</li> <li>v-html指令：<br>
+1.作用：向指定节点中渲染包含html结构的内容。<br>
+2.与插值语法的区别：<br>
+(1).v-html会替换掉节点中所有的内容，则不会。<br>
+(2).v-html可以识别html结构。<br>
+3.严重注意：v-html有安全性问题！！！！<br>
+(1).在网站上动态渲染任意HTML是非常危险的，容易导致XSS攻击(如：通过插入html向特定网站发送用户的cookie等数据)。<br>
+(2).一定要在可信的内容上使用v-html，永不要用在用户提交的内容上！</li> <li>v-cloak指令（没有值）：<br>
+1.本质是一个特殊属性，Vue实例创建完毕并接管容器后，会删掉v-cloak属性。<br>
+2.使用css <code>diaplay:none</code>配合v-cloak可以解决网速慢时页面展示出模板<code></code>的问题。</li> <li>v-once指令：<br>
+1.v-once所在节点在初次动态渲染后，就视为静态内容了。<br>
+2.以后数据的改变不会引起v-once所在结构的更新，可以用于优化性能。</li> <li>v-pre指令：<br>
+1.跳过其所在节点的编译过程。<br>
+2.可利用它跳过：没有使用指令语法、没有使用插值语法的节点，会加快编译。</li> <li>自定义指令总结：
+<ol><li><p>定义语法：<br>
+(1).局部指令：<br> <code>new Vue({directive:{指令名:配置对象}})</code>或<br> <code>new Vue({directive{指令名:回调函数}})</code>  // 简写模式回调函数默认是指bind和update<br>
+(2).全局指令：<br> <code>Vue.directive(指令名,配置对象/回调函数)</code></p></li> <li><p>配置对象中常用的3个回调：<br>
+(1)<code>.bind(element, binding)</code>：指令与元素成功绑定时调用。<br>
+(2)<code>.inserted(element, binding)</code>：指令所在元素被插入页面时调用。<br>
+(3)<code>.update(element, binding)</code>：指令所在模板结构被重新解析时调用。</p></li> <li><p>备注：<br>
+1.指令定义时不加v-，但使用时要加v-；<br>
+2.指令名如果是多个单词，要使用kebab-case命名方式，不要用camelCase命名。</p></li></ol></li></ul> <blockquote><p><code>v-if</code>指令应该注意的地方</p> <blockquote><p><code>v-if</code>指定修饰的节点在条件变为不满足时，将摧毁该节点及其子节点；当条件再变为满足时，新创建的节点及子节点与原有节点不同；<br>
+这点在echarts这类需要持有DOM实例进行渲染的库中，由于持有的旧DOM实例与新节点的DOM实例不同，会出现不能渲染的情况，解决方案是在此类场景中使用<code>v-show</code>或重新获取新节点DOM并初始化echarts实例<br> <code>v-if</code>与<code>v-else-if</code>等条件语句之间还存在着直接子节点复用的情况，添加key值可避免复用的情况发生<br>
+总结下来高频切换用<code>v-show</code>，否则用<code>v-if</code></p></blockquote></blockquote> <ul><li>v-model和v-bind.sync</li></ul> <p>两个指令均可实现双向绑定，即子组件改变prop时变化能同步到父组件中<br>
+其中v-bind.sync 通过自定义事件事件，在子组件中使用<code>this.$emit('update:prop名称', newVal)</code>的方式触发反向更新<br>
+v-bind.sync本质是语法糖</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>custom-component</span> <span class="token attr-name">:value.sync</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>value<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>custom-component</span><span class="token punctuation">&gt;</span></span>
+相当于
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>custom-component</span> <span class="token attr-name">:value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>value<span class="token punctuation">&quot;</span></span> <span class="token attr-name"><span class="token namespace">@update:</span>value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>value = $event<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>custom-component</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>v-model：v-model实际是v-bind.sync的语法糖，且每个组件仅能绑定一个v-model指令，对应text, textarea 的value属性反向更新绑定为input事件，而checkbox, select等为change事件,且仅能绑定到这些标签对应的固定值上<br>
+在自定义组件中使用是需要通过model选项定制其prop和event，否则默认事件为input</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">model</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">prop</span><span class="token operator">:</span> <span class="token string">'props name'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">event</span><span class="token operator">:</span> <span class="token string">'change'</span> <span class="token comment">// set default input event to change event</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">props</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token string-property property">'props name'</span><span class="token operator">:</span> String
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>ps:在vue3中v-model的使用范围已和v-bind.sync相同，并且移除了v-bind的sync修饰符<br> <a href="https://v3.cn.vuejs.org/guide/migration/v-model.html#%E6%A6%82%E8%A7%88" target="_blank" rel="noopener noreferrer">参考文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="生命周期"><a href="#生命周期" class="header-anchor">#</a> 生命周期</h2> <p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="lifecycle"></p> <ul><li><p>常用的生命周期钩子：<br>
+1.mounted: 发送ajax请求、启动定时器、绑定自定义事件、订阅消息等【初始化操作】。<br>
+2.beforeDestroy: 清除定时器、解绑自定义事件、取消订阅消息等【收尾工作】。</p></li> <li><p>关于销毁Vue实例<br>
+1.销毁后借助Vue开发者工具看不到任何信息。<br>
+2.销毁后自定义事件会失效，但原生DOM事件依然有效。<br>
+3.一般不会在beforeDestroy操作数据，因为即便操作数据，也不会再触发更新流程了。</p></li> <li><p>父子组件生命周期执行顺序</p> <ol><li>加载过程：父组件beforeCreate =&gt; 父组件created =&gt; 父组件beforeMount =&gt; 子组件beforeCreate =&gt; 子组件created =&gt; 子组件 beforeMount =&gt; 子组件mounted =&gt; 父组件mounted</li> <li>更新过程：父组件beforeUpdate =&gt; 子组件beforeUpdate =&gt; 子组件updated =&gt; 父组件updated</li> <li>销毁过程：父组件beforeDestroy =&gt; 子组件 beforeDestroy =&gt; 子组件 destroyed =&gt; 父组件 destroyed</li></ol></li></ul> <h2 id="组件化编程"><a href="#组件化编程" class="header-anchor">#</a> 组件化编程</h2> <p>Vue中使用组件的三大步骤：</p> <ul><li><p>一、定义一个组件<br>
+使用Vue.extend(options)创建，其中options和new Vue(options)时传入的那个options几乎一样，但也有点区别；<br>
+1.编写组件时不挂载元素,因此不写el属性<br>
+2.data必须写成函数形式,便于组件实例化时每次都生成新的数据对象<br>
+3.在脚手架中推荐在options对象中使用name属性，其值命名多单词组成时可使用大驼峰(推荐方式,需在脚手架环境下)或<code>-</code>连字符的方式<br>
+4.组件文件名命名推荐与name属性保持一致<br>
+备注：使用template可以配置组件结构。<br>
+全局定义组件时可简写:<code>const school = Vue.extend(options) =&gt; const school = options</code></p></li> <li><p>二、注册组件<br>
+1.局部注册：靠new Vue的时候传入components选项<br>
+2.全局注册：靠Vue.component('组件名',组件)</p></li> <li><p>三、使用组件标签：<br>
+闭合标签和自闭合标签(需脚手架环境)均可,vue解析标签时实例化vue组件对象</p></li> <li><p>四、组件与vm之间的关系<br>
+内置关系：<code>VueComponent.prototype.__proto__ === Vue.prototype</code></p></li></ul> <p>组件化编程中main.js文件中用于创建vm,唯一实例化的vue对象作为入口挂载组件,App.vue文件中定义根组件容器用于管理其它组件</p> <p>ps：构造函数的prototype显式原型属性与其实例化后的实例的__proto__隐式原型属性指向同一个原型对象</p> <ul><li><p>组件的函数式调用<br>
+通过在父组件的生命周期中调用函数，从而使用子组件的方式。适合于简单组件如非模态的弹窗消息、loading遮罩等
+定义方式示例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> MyMessage <span class="token keyword">from</span> <span class="token string">'MyMessage.vue'</span><span class="token punctuation">;</span> <span class="token comment">// 以函数式调用的组件</span>
+<span class="token keyword">const</span> MsgCreator <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>MyMessage<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 生成MyMessage组件构造函数</span>
+<span class="token keyword">function</span> <span class="token function">createMessage</span><span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> props<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> MsgVM <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MsgCreator</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 实例化组件此时可传入props数据,并使用$mount函数生成DOM</span>
+  <span class="token comment">// 在此函数中还可通过事件监听、设置el等方式添加更多功能</span>
+  el<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>MsgVM<span class="token punctuation">.</span>$el<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 操作DOM将组件追加到传入的el子元素末尾</span>
+  <span class="token keyword">return</span> MsgVM <span class="token comment">// 返回MsgVM实例以便功能扩展</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span>createMessage<span class="token punctuation">}</span>  <span class="token comment">// 暴露函数，调用方引入该函数并调用即可使用MyMessage组件</span>
+</code></pre></div></li></ul> <h2 id="组件间通信的方式"><a href="#组件间通信的方式" class="header-anchor">#</a> 组件间通信的方式</h2> <ul><li>props &amp; emit</li></ul> <p>props/emit仅适用于父子组件间通信，props属性只能从父组件单向流向子组件。<br>
+要实现双向通信需配合自定义事件emit, 在父组件使用v-on绑定监听事件回调函数，在子组件中使用this.$emit触发对应事件，并回传相应参数即可实现子组件到父组件的数据流动。<br>
+监听事件的回调函数上下文最终还是父组件。</p> <div class="custom-block tip"><p class="custom-block-title">v-model和v-bind.sync</p> <p>这两个指令基于props和emit实现的双向绑定也也可算作组件间通信的一种方式<br>
+详见<a href="#%E6%8C%87%E4%BB%A4">指令</a>章节中的辨析</p></div> <ul><li>EventBus 事件总线(发布订阅模式)</li></ul> <p>基于自定义事件,普通自定义事件父组件通过v-on在子组件上订阅事件，并绑定回调函数，子组件中通过this.$emit触发对应事件并回传参数<br>
+事件总线需要在全局注册发布者bus，一个组件中通过bus.$emit('消息名', 传递参数)发布消息，其他需要通信的组件通过bus.$on('消息名', 回调函数(传递的参数))订阅此消息。<br>
+由于是全局对象，可以存在多个订阅者，组件间通信也不仅限于父子组件，任意组件间均可进行通信</p> <ul><li>provide &amp; inject</li></ul> <p>provide/inject可以实现祖到孙组件间的通信,没有层级深度限制，且不会为数据增加额外的响应式(传入响应式数据则有响应式，没有则没有响应式)，<br>
+祖组件中设置provide属性，提供可供注入的对象或返回对象的函数，子孙组件中使用inject属性(string[]/object)从提供的注入对象中选择要注入的属性。</p> <ul><li><code>$parent</code> &amp; <code>$children</code>或ref</li></ul> <p>利用<code>$parent</code>和<code>$children</code>属性获取父组件或子组件的实例，通过读取或操作对应的值即可实现父子组件间通信<br>
+这种组件间通信方式仅应急状况下使用，不推荐大规模应用</p> <ul><li><code>$attrs</code> &amp; <code>$listeners</code></li></ul> <p>该组合可进行祖孙组件间通信。<br> <code>$attrs</code>当前组件包含了除props声明外的所有绑定属性(class、style除外)，可以类比为函数中的<code>...rest</code>参数<br>
+当前组件可通过<code>v-bind=&quot;$attrs&quot;</code>将其接收的绑定属性传递到其子组件上，从而让孙组件可以访问到祖组件上传入的绑定属性<br> <code>$listeners</code>与<code>$attrs</code>类似包含了v-on事件监听器(不含.native修饰的),同样使用<code>v-on=&quot;$listeners&quot;</code>可将接收的事件监听器传递到子组件中，让孙组件能够访问到事件，并通过<code>$emit</code>可触发该事件，并且当当前组件中额外绑定了同名事件时，孙组件会同时触发这两个事件，触发顺序类似于冒泡，因此尽量避免事件名重复</p> <ul><li>vuex</li></ul> <p>vuex是一个全局状态管理库，详细特性及使用方法见<a href="/vue/vuex/">vuex</a></p> <h2 id="脚手架"><a href="#脚手架" class="header-anchor">#</a> 脚手架</h2> <p>main.js文件中使用<code>render: h =&gt; h(App)</code>的原因是<br>
+通过脚手架import的vue只包含核心功能没有模板解析器，因此不能使用template配置项，需要使用render函数接收到的createElement函数(简写为h)去指定具体内容<br>
+render函数将App组件放入容器中</p> <h2 id="组件属性及配置"><a href="#组件属性及配置" class="header-anchor">#</a> 组件属性及配置</h2> <ul><li>ref属性</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>School</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>sch<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>  
+this.$refs.sch 可获取到真实的DOM元素或School组件实例对象  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>School</span><span class="token punctuation">&gt;</span></span>  
+</code></pre></div><ul><li>props属性</li></ul> <p>父传子直接在props中传递数据即可，子传父需父组件先传递回调函数，子组件通过调用回调函数的方式向父组件传递数据，在子组件中不推荐直接修改父组件传过来的props数据</p> <p>props用于父子组件通信,常用写法如下:</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">//简单声明接收  </span>
+<span class="token literal-property property">props</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">,</span><span class="token string">'sex'</span><span class="token punctuation">]</span>  
+<span class="token comment">// 类型限制  </span>
+<span class="token literal-property property">props</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token literal-property property">name</span><span class="token operator">:</span>String<span class="token punctuation">}</span>  
+<span class="token comment">// 类型限制+默认值的指定+必要性的限制  </span>
+<span class="token literal-property property">props</span><span class="token operator">:</span><span class="token punctuation">{</span>  
+  <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token punctuation">{</span>  
+    <span class="token literal-property property">type</span><span class="token operator">:</span>String<span class="token punctuation">,</span>  
+    <span class="token literal-property property">required</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 与default属性二选一  </span>
+    <span class="token comment">// default:'张三'  </span>
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  
+</code></pre></div><ul><li>mixin混入</li></ul> <p>将vue配置项的一部分提取出去,给各组件复用的方式称为混入;<br>
+局部混入:通过import导入对象,在配置项中使用<code>mixins:[mixinObj1,mixinObj2]</code><br>
+全局混入:全局混入将混入每一个vue实例中,导入后,通过<code>Vue.mixin(mixinObj1)</code>逐个混入<br>
+混入的配置项若有重复,不会覆盖原配置,<br>
+混入的对象型选项会进行合并，若key值冲突，则组件的属性值将覆盖该选项，hook函数则将合并调用，混入的hook优先被调用</p> <ul><li>插件</li></ul> <p>在实例化vm之前,调用<code>Vue.use(plugins,params)</code>的方式挂载插件,传入plugins对象中必须包含install方法,install可以接收到Vue构造函数和params参数,在此阶段全局过滤器,全局混入,第三方库等功能挂载到原型对象上,增加vue的功能</p> <ul><li>scoped</li></ul> <p>在vue文件中<code>&lt;style scoped&gt;&lt;/style&gt;</code>中使用该属性,标签中的属性将只在本组件中生效.<br>
+vue是通过将模板中的标签加入<code>data-生成数字</code>属性来约束样式的</p> <ul><li><code>$nextTick</code></li></ul> <p><code>$nextTick</code>属性用于传入一个回调函数,该函数在下次DOM更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的DOM.<br> <code>$nextTick</code>也算是生命周期图之外的一个生命周期函数</p> <ul><li>过渡动画</li></ul> <p>vue中还支持使用标签<code>&lt;transition&gt;&lt;/transition&gt;</code>或<code>&lt;transition-group&gt;&lt;/transition-group&gt;</code>设置过渡效果,详见<a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <ul><li>vue-resource</li></ul> <p>vue-resource是vue1.×版本提供的ajax请求插件,vue2.0以后不再维护,推荐使用axios发起ajax请求</p> <h2 id="插槽"><a href="#插槽" class="header-anchor">#</a> 插槽</h2> <p>vue通过插槽向子组件中传递html结构<br>
+由于结构是在父组件中定义的,所以结构的样式和数据也可引用父组件</p> <ul><li>默认插槽</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- 父组件中 --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>子组件</span><span class="token punctuation">&gt;</span></span>要插入的html结构<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>子组件</span><span class="token punctuation">&gt;</span></span>  
+<span class="token comment">&lt;!-- 子组件中 --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">&gt;</span></span>默认值/结构<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- 要插入的html结构占位符 --&gt;</span>  
+</code></pre></div><ul><li>具名插槽</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- 父组件中 --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>子组件</span><span class="token punctuation">&gt;</span></span>  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html结构1</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>占位1<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html结构1</span><span class="token punctuation">&gt;</span></span>  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html结构2</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>占位2<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html结构2</span><span class="token punctuation">&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>子组件</span><span class="token punctuation">&gt;</span></span>  
+<span class="token comment">&lt;!-- 子组件中 --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>占位1<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>默认值/结构<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>占位2<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>默认值/结构<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>  
+</code></pre></div><ul><li>作用域插槽</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- 父组件中 --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">scope</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>childrenParams<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- 可接收子组件传来的参数childrenParams(可自命令) --&gt;</span>  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html结构</span><span class="token punctuation">&gt;</span></span>{{childrenParams}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html结构</span><span class="token punctuation">&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>  
+<span class="token comment">&lt;!-- 子组件中 --&gt;</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">:params1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>data1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">params2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>string2<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- 可传递多个参数，将被包裹在一个对象中 --&gt;</span>  
+</code></pre></div><hr> <h2 id="cookbook"><a href="#cookbook" class="header-anchor">#</a> Cookbook</h2> <p>参考资料<a href="https://cn.vuejs.org/v2/cookbook/" target="_blank" rel="noopener noreferrer">Cookbook<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>中主要介绍了vue的编程技巧</p> <h2 id="添加实例property"><a href="#添加实例property" class="header-anchor">#</a> 添加实例property</h2> <p><code>vue.prototype.$appName = 'My App'</code>其中$符号是为了避免命名冲突而约定的符号。
+当在原型时绑定自定义函数时，该函数通过this，能够访问到实例的作用域。
+为了保证安全，应尽量避免使用该模式</p> <h2 id="表单校验"><a href="#表单校验" class="header-anchor">#</a> 表单校验</h2> <h2 id="vue-cli"><a href="#vue-cli" class="header-anchor">#</a> vue-cli</h2> <h2 id="vue-lib模式打包生成umd文件笔记"><a href="#vue-lib模式打包生成umd文件笔记" class="header-anchor">#</a> vue lib模式打包生成umd文件笔记</h2> <p>通过使用vue<a href="https://cli.vuejs.org/zh/guide/build-targets.html#%E5%BA%93" target="_blank" rel="noopener noreferrer">打包命令<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>中的target参数 指定构建模式为lib，可打包生产umd文件。<br>
+lib模式下默认不会打包vue，若要打包vue可使用命令<code>vue-cli-service build --target lib --inline-vue</code>
+打包完成后可生成文件<br>
+×××.common.js: 一个给打包器用的 CommonJS 包 (不幸的是，webpack 目前还并没有支持 ES modules 输出格式的包)<br>
+×××.umd.js: 一个直接给浏览器或 AMD loader 使用的 UMD 包<br>
+×××.umd.min.js: 压缩后的 UMD 构建版本<br>
+×××.css: 提取出来的 CSS 文件 (可以通过在 vue.config.js 中设置css: { extract: false } 强制内联)</p> <h2 id="关联问题js模块化历史"><a href="#关联问题js模块化历史" class="header-anchor">#</a> 关联问题js模块化历史</h2> <ol><li>立即执行函数<br>
+通过立即执行函数封装一个局部作用域</li> <li>CommonJS标准<br>
+nodejs出现后为了解决打包文件相互依赖问题，出现了commonjs语法
+引入使用var fs = require('fs'), 导出使用module.export a = 1;</li> <li>AMD(异步模块定义)<br>
+Commonjs是同步执行，但浏览器经常需要异步加载资源，于是有了AMD的语法，通过回调方式拿到异步变量 require('vue', (Vue) =&gt; {new Vue();})</li> <li>import/export<br>
+为了统一2、3两种方式js委员会发布了标准的import/export语法，通过import导入模块，export导出模块。同时，这种打包方式能够更好的在编译时进行静态优化
+这种标准随之es6标准一起出现，因此也称这种模块为es6模块</li></ol> <p>UMD(统一模块定义):这种模块语法会自动监测开发人员使用的是 Common.js/AMD/import/export 种的哪种方式，然后再针对各自的语法进行导出，这种方式可以兼容所有其他的模块定义方法。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/7/2022, 11:35:37 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3da9e175.js" defer></script><script src="/assets/js/2.416a2b3a.js" defer></script><script src="/assets/js/47.fee68411.js" defer></script>
+  </body>
+</html>

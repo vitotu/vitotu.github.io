@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>longList</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #box {
+      width: 300px;
+      height: 500px;
+      overflow-y: scroll;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div id="box_container"></div>
+  </div>
+  <script>
+    (()=>{
+      let page = 1; // current page  
+      let size = 20; // number of item per page  
+      const height = 50; // height of per item  
+      const preLoadNum = 3; // pre load page number  
+      // virtual padding bottom height for calculate threshold height
+      const paddingBottom = 50;
+      const boxHeight = 500; // scroll window viewport height
+      // pages array, you can collect all block element array or only pre cur and next block element array
+      let eleArr = []; 
+      const box = document.querySelector('#box');  
+      const boxContainer = document.querySelector('#box_container');  
+      const {fragment, box: boxList} = createItem(page, size);  
+      eleArr.push(boxList);  
+      boxContainer.appendChild(fragment);  
+      box.addEventListener("scroll", (e)=>{
+        const scrollTop = e.target.scrollTop;
+        // calculate threshold height use down to pre page height
+        let nextHeight = page * (size * height) - boxHeight - paddingBottom;
+        if(scrollTop >= nextHeight){ // render next page
+          page++;
+          // calculate loaded pages but not to render placeholder padding size
+          let paddingTop = (page - preLoadNum) * (size * height);
+          let fragment;
+          // if current page block not exist then create block
+          if (!eleArr[page - 1]) { // current page index is page - 1(start with 0)
+            const {fragment: element, box: boxList} = createItem(page, size)
+            fragment = element;
+            eleArr.push(boxList);
+          } else {
+            fragment = eleArr[page - 1]
+          }
+          boxContainer.appendChild(fragment);
+          // remove should being hide page block
+          const hideElem = document.querySelector(`.page_${page - preLoadNum}`);
+          if (hideElem) {
+            // remove and save the placeholder with padding top
+            boxContainer.removeChild(hideElem);
+            boxContainer.style.paddingTop = `${paddingTop}px`;
+          }
+        } // else render the pre page
+        else if ( scrollTop <= (page - preLoadNum + 1) * size * height + paddingBottom && page > preLoadNum) {
+          page--;
+          let paddingTop = (page - preLoadNum) * (size * height);
+          // get not render block which is the first block before pre block
+          const fragment = eleArr[page - preLoadNum];
+          boxContainer.insertBefore(fragment, boxContainer.childNodes[0]);
+          const hideElem = document.querySelector(`.page_${page + 1}`);
+          if (hideElem) {
+            // remove next block and update placeholder height
+            boxContainer.removeChild(hideElem);
+            boxContainer.style.paddingTop = `${paddingTop}px`;
+          }
+        }
+      }, false);
+    })()
+    /** 
+     * @description: create fragment 
+     * @param {number} page : page number 
+     * @param {number} size : number of item per page 
+     * @return {Element, Element[]} : fragment and item element array 
+     */
+    function createItem(page = 1, size = 10){  
+      const fragment = document.createDocumentFragment();  
+      const box = document.createElement("div");  
+      box.className = `page_${page}`;  for(let i = 0; i < size; i++){
+      const element = document.createElement("div");
+      element.style.width = "100%";
+      element.style.height = "50px";
+      element.className = `item_${page * (i + 1)}`;
+      element.innerText = `我是item——${((page - 1) * size) + i + 1}`;
+      box.appendChild(element);  }  
+      fragment.appendChild(box);  
+      return {fragment, box};
+    }
+  </script>
+</body>
+</html>
