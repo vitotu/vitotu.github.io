@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5d097cca","path":"/vue/vue2plus/mustache.html","title":"\u5B9E\u73B0\u7B80\u5355\u7684mustache","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1651985752000,"contributors":[{"name":"vito","email":"vitotu@qq.com","commits":2}]},"filePathRelative":"vue/vue2plus/mustache.md"}');export{e as data};
