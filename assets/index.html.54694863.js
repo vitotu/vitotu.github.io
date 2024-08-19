@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-71969c7c","path":"/LinuxNote/","title":"linux\u64CD\u4F5C\u7CFB\u7EDF","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1651768003000,"contributors":[{"name":"vito","email":"vitotu@qq.com","commits":2}]},"filePathRelative":"LinuxNote/index.md"}');export{t as data};

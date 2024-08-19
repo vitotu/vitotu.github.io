@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-645d1906","path":"/vue/vue2plus/vDom.html","title":"\u624B\u5199\u5B9E\u73B0\u865A\u62DFDOM\u548Cdiff\u7B97\u6CD5","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1652092780000,"contributors":[{"name":"vito","email":"vitotu@qq.com","commits":2}]},"filePathRelative":"vue/vue2plus/vDom.md"}');export{e as data};

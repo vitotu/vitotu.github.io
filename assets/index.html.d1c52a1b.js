@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-2dae5911","path":"/tripPlan/japan/","title":"Japan \u5927\u962A\u5230\u4E1C\u4EAC\u653B\u7565","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1716220191000,"contributors":[{"name":"vito","email":"vitotu@qq.com","commits":1}]},"filePathRelative":"tripPlan/japan/README.md"}');export{t as data};
