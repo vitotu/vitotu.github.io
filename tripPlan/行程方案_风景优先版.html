@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>五一川西小环线行程方案：风景优先版</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #e67e22;
+            --bg-color: #fdf5e6;
+            --text-color: #333;
+            --border-color: #f3e5ab;
+            --card-bg: #fff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 10px;
+            font-size: 15px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 1.4rem; }
+        .intro-card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h2 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin: 20px 0 10px 0;
+        }
+        .day-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+        }
+        .day-header {
+            background: #fffaf0;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .day-title {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+        .day-date {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .day-content {
+            padding: 15px;
+        }
+        .route {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .info-item {
+            background: #fef5e7;
+            padding: 8px;
+            border-radius: 6px;
+        }
+        .info-label {
+            font-size: 0.75rem;
+            color: #7f8c8d;
+            display: block;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            color: #444;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before {
+            content: "•";
+            margin-right: 5px;
+            color: var(--accent-color);
+        }
+        .footer-info {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-top: 5px;
+            padding-left: 12px;
+        }
+        .tag-row {
+            margin-top: 10px;
+        }
+        .tag {
+            display: inline-block;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .risk-tag {
+            background: #ffebee;
+            color: #c62828;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.2rem; }
+            .day-content { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>五一川西小环线：风景优先版</h1>
+            <p style="margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.9;">极致摄影 · 震撼风光 · 深度探索</p>
+        </div>
+
+        <div class="intro-card">
+            <h2>方案定位</h2>
+            <div class="tag-row">
+                <span class="tag">深度摄影</span>
+                <span class="tag">极致风光</span>
+                <span class="tag">推荐指数 ⭐⭐⭐⭐⭐</span>
+                <span class="tag risk-tag">风险等级 ⭐⭐⭐⭐</span>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 10px;">
+                <strong>核心目标：</strong>押注川西三大极致景观：贡嘎倒影、雅拉金山、月亮湖野营。<br>
+                <strong>适合人群：</strong>摄影爱好者、体力好的年轻人、追求极致体验者。
+            </p>
+        </div>
+
+        <h2>方案总览</h2>
+        <div class="intro-card">
+            <div class="info-grid">
+                <div class="info-item"><span class="info-label">总天数</span>6天</div>
+                <div class="info-item"><span class="info-label">适合人数</span>5~6人</div>
+                <div class="info-item"><span class="info-label">出发时间</span>2026-04-30</div>
+                <div class="info-item"><span class="info-label">返回时间</span>2026-05-05</div>
+            </div>
+            <p style="font-size: 0.85rem; color: #666;">
+                <strong>推荐车型：</strong>坦克300 或 硬派越野车<br>
+                <strong>关键词：</strong>贡嘎雪山、冷噶错、月亮湖、雅拉金山、格底拉姆
+            </p>
+        </div>
+
+        <h2>每日行程</h2>
+
+        <!-- Day 1 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">Day 1</span>
+                <span class="day-date">2026-04-30</span>
+            </div>
+            <div class="day-content">
+                <span class="route">成都 → 四姑娘山镇</span>
+                <div class="info-grid">
+                    <div class="info-item"><span class="info-label">车程</span>4.5小时</div>
+                    <div class="info-item"><span class="info-label">海拔</span>3200m</div>
+                </div>
+                <div class="section-title">核心景点</div>
+                <div class="footer-info">猫鼻梁（日落全景）、都江堰（仅南桥蓝眼泪）</div>
+                <div class="section-title">提示</div>
+                <div class="footer-info" style="color: #ef6c00;">五一首日建议提早出发，避开第一波浪潮。</div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">Day 2</span>
+                <span class="day-date">2026-05-01</span>
+            </div>
+            <div class="day-content">
+                <span class="route">双桥沟游览 → 中路藏寨</span>
+                <div class="info-grid">
+                    <div class="info-item"><span class="info-label">车程</span>3小时</div>
+                    <div class="info-item"><span class="info-label">住宿海拔</span>2100m</div>
+                </div>
+                <div class="section-title">核心景点</div>
+                <div class="footer-info">双桥沟（红杉林、布达拉峰）、中路藏寨</div>
+                <div class="section-title">拍照点</div>
+                <div class="footer-info">布达拉峰下的公路大片。</div>
+                <div class="section-title">提示</div>
+                <div class="footer-info" style="color: #ef6c00;">第一波进沟光线最好。中路藏寨含氧量高，利于恢复。</div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">Day 3</span>
+                <span class="day-date">2026-05-02</span>
+            </div>
+            <div class="day-content">
+                <span class="route">中路 → 墨石公园 → 姑弄村</span>
+                <div class="info-grid">
+                    <div class="info-item"><span class="info-label">车程</span>3.5小时</div>
+                    <div class="info-item"><span class="info-label">状态</span>风光大片</div>
+                </div>
+                <div class="section-title">核心景点</div>
+                <div class="footer-info">墨石公园、雅拉雪山观景台、姑弄村溪流</div>
+                <div class="section-title">拍照点</div>
+                <div class="footer-info">姑弄村雅拉雪山倒影（黄昏）。</div>
+                <div class="section-title">提示</div>
+                <div class="footer-info" style="color: #ef6c00;">尽量 16:00 前到姑弄村占位，五一塔公房源极紧。</div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">Day 4</span>
+                <span class="day-date">2026-05-03</span>
+            </div>
+            <div class="day-content">
+                <span class="route">塔公 → 甲根坝 → 月亮湖</span>
+                <div class="info-grid">
+                    <div class="info-item"><span class="info-label">车程</span>2.5小时</div>
+                    <div class="info-item"><span class="info-label">海拔</span>后山越野</div>
+                </div>
+                <div class="section-title">核心景点</div>
+                <div class="footer-info">甲根坝田园、月亮湖、空中花园（看贡嘎）</div>
+                <div class="section-title">拍照点</div>
+                <div class="footer-info">月亮湖枯树海子、空中花园贡嘎日落。</div>
+                <div class="section-title">提示</div>
+                <div class="footer-info" style="color: #c62828; font-weight: bold;">空中花园路极其陡峭，非硬派越野不可行。</div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">Day 5</span>
+                <span class="day-date">2026-05-04</span>
+            </div>
+            <div class="day-content">
+                <span class="route">甲根坝 → 冷噶错 → 新都桥</span>
+                <div class="info-grid">
+                    <div class="info-item"><span class="info-label">徒步/骑马</span>3-4小时</div>
+                    <div class="info-item"><span class="info-label">最高海拔</span>4500m</div>
+                </div>
+                <div class="section-title">核心景点</div>
+                <div class="footer-info">冷噶错（贡嘎之眼、贡嘎倒影）</div>
+                <div class="section-title">重要提示</div>
+                <div class="footer-info" style="color: #c62828; font-weight: bold;">高海拔徒步，必须带足氧气，守到日落。</div>
+                <div class="section-title">状态</div>
+                <div class="footer-info">本次行程体能上限，风景绝对值。</div>
+            </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="day-card">
+            <div class="day-header">
+                <span class="day-title">Day 6</span>
+                <span class="day-date">2026-05-05</span>
+            </div>
+            <div class="day-content">
+                <span class="route">新都桥 → 折多山 → 成都</span>
+                <div class="info-grid">
+                    <div class="info-item"><span class="info-label">车程</span>6-8小时</div>
+                    <div class="info-item"><span class="info-label">状态</span>返程硬仗</div>
+                </div>
+                <div class="section-title">核心景点</div>
+                <div class="footer-info">折多山垭口（路过）、天全服务区</div>
+                <div class="section-title">提示</div>
+                <div class="footer-info" style="color: #ef6c00;">建议 07:00 出发！防折多山/雅康高速大堵车。</div>
+            </div>
+        </div>
+
+        <h2>风险与建议</h2>
+        <div class="intro-card" style="font-size: 0.9rem;">
+            <p><strong>高反：</strong>Day 4-5 海拔最高，务必在成都准备好钢瓶氧气。</p>
+            <p><strong>装备：</strong>厚羽绒服/冲锋衣是标配，可能下雪。</p>
+            <p><strong>机位：</strong>姑弄村是鱼子西的优质替代，人相对少。建议关注防火封山通知。</p>
+        </div>
+    </div>
+</body>
+</html>
