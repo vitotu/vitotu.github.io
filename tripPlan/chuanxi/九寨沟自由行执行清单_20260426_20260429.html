@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>九寨沟自由行执行清单</title>
+  <style>
+    :root {
+      --bg: #eef5f4;
+      --paper: #fbfefd;
+      --ink: #25312f;
+      --muted: #64706d;
+      --line: #cbd9d5;
+      --accent: #2f7069;
+      --accent-2: #537c4a;
+      --warn: #a85737;
+      --soft-accent: #e2f0ed;
+      --soft-ok: #e8f1e5;
+      --soft-warn: #fde8de;
+      --shadow: 0 18px 42px rgba(26, 62, 58, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(47, 112, 105, 0.12), transparent 24%),
+        linear-gradient(180deg, #edf4f3 0%, var(--bg) 100%);
+      line-height: 1.68;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100vw - 28px));
+      margin: 18px auto 44px;
+    }
+
+    .hero,
+    .section {
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 28px;
+      color: #f5fffd;
+      background: linear-gradient(135deg, rgba(27, 79, 74, 0.97), rgba(40, 57, 61, 0.98));
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 23px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 10px; }
+
+    .sub {
+      max-width: 820px;
+      color: rgba(245,255,253,0.88);
+    }
+
+    .chips,
+    .grid,
+    .two,
+    .three,
+    .checklist {
+      display: grid;
+      gap: 14px;
+    }
+
+    .chips {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      margin-top: 18px;
+    }
+
+    .chip,
+    .metric,
+    .card,
+    .check {
+      padding: 15px 16px;
+      border-radius: 18px;
+    }
+
+    .chip {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .chip strong,
+    .metric strong {
+      display: block;
+      font-size: 12px;
+      opacity: 0.82;
+      margin-bottom: 4px;
+    }
+
+    .chip span,
+    .metric span {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 22px;
+      background: rgba(251, 254, 253, 0.94);
+      border: 1px solid rgba(47, 112, 105, 0.08);
+    }
+
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .metric,
+    .card,
+    .check {
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .metric {
+      border-left: 5px solid var(--accent);
+    }
+
+    .metric.ok { border-left-color: var(--accent-2); }
+    .metric.warn { border-left-color: var(--warn); }
+
+    .two {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .three {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .muted { color: var(--muted); }
+
+    .check .head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--accent);
+      border-radius: 5px;
+      flex: 0 0 auto;
+    }
+
+    .callout {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid #bdded7;
+      background: linear-gradient(135deg, var(--soft-accent), #f5fbfa);
+    }
+
+    .callout.ok {
+      border-color: #cadbc4;
+      background: linear-gradient(135deg, var(--soft-ok), #f8fcf6);
+    }
+
+    .callout.warn {
+      border-color: #efccb9;
+      background: linear-gradient(135deg, var(--soft-warn), #fff8f4);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e6f0ec;
+      color: #345d57;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .badge.warn {
+      background: #fbe5db;
+      color: #9f4f30;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      background: #e7f1ee;
+      color: #4f6b66;
+      font-size: 13px;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100vw - 16px, 1100px); margin: 8px auto 24px; }
+      .hero, .section { padding: 18px; border-radius: 20px; }
+      h2 { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">自由行为主，不依赖包车</div>
+      <h1>九寨沟自由行执行清单</h1>
+      <p class="sub">适用范围：2026-04-26 至 2026-04-29，成都往返，九寨沟为主景区，黄龙/松潘古城为机动补位。用途：照着执行，不做临场大决策。</p>
+      <div class="chips">
+        <div class="chip"><strong>推荐交通</strong><span>高铁 + 官方接驳</span></div>
+        <div class="chip"><strong>核心景区</strong><span>九寨沟</span></div>
+        <div class="chip"><strong>第二核心</strong><span>黄龙可选</span></div>
+        <div class="chip"><strong>成都角色</strong><span>仅往返</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 核心决策</h2>
+      <div class="grid">
+        <div class="metric ok">
+          <strong>交通</strong>
+          <span>先锁高铁，再锁接驳</span>
+          <p class="muted">不要先订沟口住宿再赌临时车。</p>
+        </div>
+        <div class="metric">
+          <strong>景区</strong>
+          <span>九寨沟单独留完整一天</span>
+          <p class="muted">不要和跨城交通混搭在同一天。</p>
+        </div>
+        <div class="metric warn">
+          <strong>返程</strong>
+          <span>车站缓冲至少 3 小时</span>
+          <p class="muted">尤其 Day 4，不要把返程压太紧。</p>
+        </div>
+        <div class="metric">
+          <strong>周边</strong>
+          <span>黄龙与松潘二选一思路</span>
+          <p class="muted">状态好上黄龙，状态一般选松潘古城。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. 行前 7-10 天清单</h2>
+      <div class="checklist">
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>锁定大交通</strong></div>
+          <ul>
+            <li>确认成都出发站与返程站，优先围绕 `黄龙九寨站` 安排。</li>
+            <li>先看去程能否尽量早到，返程尽量不要选太晚又太赶的车次。</li>
+            <li>如果只有非常极端的时刻表，宁可放弃黄龙，也不要压缩返程缓冲。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>锁定九寨沟门票</strong></div>
+          <ul>
+            <li>通过官方平台实名预约。</li>
+            <li>优先把 Day 2 作为九寨沟完整游览日。</li>
+            <li>售罄风险高时，门票优先级高于黄龙和酒店美观度。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>锁定沟口住宿</strong></div>
+          <ul>
+            <li>优先沟口/游客中心附近，减少 Day 2 早起移动成本。</li>
+            <li>建议至少住 2 晚，避免搬运行李。</li>
+            <li>优先可免费取消房型，给交通和天气留弹性。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认官方接驳</strong></div>
+          <ul>
+            <li>重点确认 `黄龙九寨站 ↔ 九寨沟口` 的班次和购票方式。</li>
+            <li>如果计划 Day 3 去黄龙，再确认 `黄龙九寨站 ↔ 黄龙景区` 的接驳口径。</li>
+            <li>不要把“现场肯定有车”当成计划本身。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>执行顺序</strong>
+        高铁 > 九寨沟门票 > 沟口住宿 > 官方接驳 > 黄龙/松潘机动安排。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. 推荐日程执行版</h2>
+      <div class="two">
+        <div class="card">
+          <h3>Day 1 | 成都 → 黄龙九寨站 → 九寨沟口</h3>
+          <ul>
+            <li>目标只有一个：平稳到沟口。</li>
+            <li>到达后只做入住、补给、晚饭、检查门票。</li>
+            <li>不安排九寨沟景区，不安排黄龙，不安排额外折返。</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge">住 2 晚最稳</span>
+            <span class="badge warn">第一天不要贪景点</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Day 2 | 九寨沟全天</h3>
+          <ul>
+            <li>全日只做九寨沟。</li>
+            <li>优先镜海、五花海、珍珠滩瀑布、诺日朗、长海、五彩池。</li>
+            <li>体力不够时保大景，不追求每站都下。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Day 3 | 两种走法二选一</h3>
+          <ul>
+            <li>状态好：黄龙。</li>
+            <li>状态一般：松潘古城 + 川主寺。</li>
+            <li>如果 Day 2 明显累、天气差、有人不适，直接选轻松版。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Day 4 | 返回成都</h3>
+          <ul>
+            <li>优先稳定返程。</li>
+            <li>所有交通都按“提前到站”思路执行。</li>
+            <li>不要在返程日临时加景点。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. Day 2 九寨沟进沟清单</h2>
+      <div class="checklist">
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>前一晚完成的事</strong></div>
+          <ul>
+            <li>确认门票、身份证、充电宝、雨具、防晒。</li>
+            <li>把早餐和饮水问题解决掉，不把时间浪费在早晨找店上。</li>
+            <li>规划好“必去点位”和“可放弃点位”。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>进沟优先级</strong></div>
+          <ul>
+            <li>第一优先：镜海、五花海、珍珠滩瀑布。</li>
+            <li>第二优先：诺日朗瀑布。</li>
+            <li>第三优先：长海、五彩池。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>当天不要做的事</strong></div>
+          <ul>
+            <li>不要边玩边纠结次日交通。</li>
+            <li>不要离开栈道抄近路。</li>
+            <li>不要中午体力最差时硬追所有点。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout ok">
+        <strong>拍照策略</strong>
+        九寨沟不是“多去几个点”就一定更值。自由行最重要的是保住高质量的几个经典点，而不是走成拉练。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. Day 3 机动日判断表</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>情况</th>
+              <th>建议</th>
+              <th>原因</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>天气晴、体力好、无人高反</td>
+              <td>去黄龙</td>
+              <td>这时黄龙的景观收益最高</td>
+            </tr>
+            <tr>
+              <td>Day 2 走累了，但还想出去</td>
+              <td>松潘古城 + 川主寺</td>
+              <td>轻松、低压、补位感强</td>
+            </tr>
+            <tr>
+              <td>有人轻微不适</td>
+              <td>放弃黄龙</td>
+              <td>黄龙更高，不值得硬顶</td>
+            </tr>
+            <tr>
+              <td>返程车次偏早</td>
+              <td>Day 3 提前靠近车站一侧住宿</td>
+              <td>为 Day 4 减压</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. 票务与交通核验清单</h2>
+      <div class="checklist">
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>九寨沟</strong></div>
+          <ul>
+            <li>门票：190 元 / 人。</li>
+            <li>观光车：90 元 / 人。</li>
+            <li>旺季开放口径：入园 8:00 - 14:00，闭园 18:00。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>黄龙九寨站接驳</strong></div>
+          <ul>
+            <li>站到九寨沟口，官方历史口径为单程约 51 元 / 人。</li>
+            <li>站到黄龙景区，官方历史口径为单程约 28 元 / 人。</li>
+            <li>出发前再次核当天班次、起点位置和购票入口。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>黄龙</strong></div>
+          <ul>
+            <li>4 月下旬通常仍落在淡季口径附近。</li>
+            <li>但 2026 年你们出发时的正式票价，仍建议最后再核一次官方公告。</li>
+            <li>如果你们最终不去黄龙，这一步可直接跳过。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small" style="margin-top:12px;">这里保留了“再次核验”步骤，是因为九寨沟方向的接驳和黄龙票务都可能按季节或运营安排微调。</p>
+    </section>
+
+    <section class="section">
+      <h2>7. 住宿选择清单</h2>
+      <div class="three">
+        <div class="card">
+          <h3>优先级最高</h3>
+          <ul>
+            <li>离游客中心近</li>
+            <li>支持免费取消</li>
+            <li>评价里没有大规模热水、卫生、隔音问题</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>优先级中等</h3>
+          <ul>
+            <li>装修新</li>
+            <li>早餐好</li>
+            <li>夜景好看</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>不要执着</h3>
+          <ul>
+            <li>沟景房噱头</li>
+            <li>花哨旅拍套餐</li>
+            <li>过远但便宜的住宿点</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>住宿原则</strong>
+        九寨沟自由行里，住宿的核心价值不是“住得多美”，而是“第二天进沟少折腾”。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8. 自由行最容易踩的坑</h2>
+      <div class="two">
+        <div class="card">
+          <h3>交通坑</h3>
+          <ul>
+            <li>为了省钱选黑车或路边拼车。</li>
+            <li>返程只给车站留 1 小时级缓冲。</li>
+            <li>把九寨沟和黄龙硬塞同一天。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>票务坑</h3>
+          <ul>
+            <li>临近出发才想起抢九寨沟门票。</li>
+            <li>轻信“内部票”“快速入园”“代抢”。</li>
+            <li>没看开放时间，入园窗口错过后整天崩掉。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>体力坑</h3>
+          <ul>
+            <li>Day 1 强行加景点，Day 2 直接被拖垮。</li>
+            <li>Day 2 走太满，Day 3 还硬上黄龙。</li>
+            <li>把黄龙当成“顺手去一下”的轻景区。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>节奏坑</h3>
+          <ul>
+            <li>每天都想住不同地方。</li>
+            <li>太晚才决定 Day 3 去不去黄龙。</li>
+            <li>返程日还想加一个景点。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout warn">
+        <strong>一句话版</strong>
+        自由行最大的敌人不是信息不够，而是临场起意太多。把 Day 1、Day 2 和返程先锁死，整趟行程就稳了。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>9. 随身物品清单</h2>
+      <div class="three">
+        <div class="card">
+          <h3>必须带</h3>
+          <ul>
+            <li>身份证</li>
+            <li>手机 + 充电宝</li>
+            <li>防晒、墨镜、帽子</li>
+            <li>防滑舒适鞋</li>
+            <li>轻便雨具</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>建议带</h3>
+          <ul>
+            <li>薄羽绒或抓绒</li>
+            <li>常用药</li>
+            <li>少量高糖零食</li>
+            <li>保温杯</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>不建议依赖</h3>
+          <ul>
+            <li>临时在景区附近现买所有装备</li>
+            <li>穿搭优先于保暖和防滑</li>
+            <li>把氧气当作万能补救方案</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>10. 出发前最后 24 小时清单</h2>
+      <div class="checklist">
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>再核一次</strong></div>
+          <ul>
+            <li>高铁车次和车站。</li>
+            <li>九寨沟门票与证件信息。</li>
+            <li>黄龙九寨站接驳或备用交通。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>再确认一次</strong></div>
+          <ul>
+            <li>沟口住宿位置。</li>
+            <li>Day 3 是黄龙版还是松潘版。</li>
+            <li>返程日需预留的出发时间。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>放弃幻想</strong></div>
+          <ul>
+            <li>不做“到了再说”的关键交通决策。</li>
+            <li>不赌黄龙与返程能同时完美兼顾。</li>
+            <li>不把所有美景都堆进 4 天里。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout ok">
+        <strong>最后建议</strong>
+        你们这次自由行最稳的版本就是：住沟口、九寨沟单独一天、黄龙可选、返程留大缓冲。只要守住这四条，体验不会差。
+      </div>
+    </section>
+  </main>
+</body>
+</html>

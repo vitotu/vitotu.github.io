@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>成都往返九寨沟及周边4天攻略</title>
+  <style>
+    :root {
+      --bg: #eef4f2;
+      --paper: #fbfffd;
+      --ink: #24312e;
+      --muted: #63706c;
+      --line: #c9d9d3;
+      --accent: #2d6e68;
+      --accent-2: #567f4f;
+      --warn: #a55433;
+      --soft-accent: #dff1ed;
+      --soft-warn: #fde8dd;
+      --soft-ok: #e7f0e4;
+      --shadow: 0 18px 44px rgba(29, 63, 58, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(45, 110, 104, 0.14), transparent 24%),
+        radial-gradient(circle at top right, rgba(86, 127, 79, 0.10), transparent 22%),
+        linear-gradient(180deg, #ecf4f3 0%, var(--bg) 100%);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100vw - 28px));
+      margin: 18px auto 44px;
+    }
+
+    .hero,
+    .section {
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 30px;
+      color: #f5fffd;
+      background:
+        linear-gradient(135deg, rgba(27, 79, 74, 0.97), rgba(38, 58, 63, 0.98));
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -90px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 10px; }
+
+    .sub {
+      margin-top: 12px;
+      max-width: 860px;
+      color: rgba(245,255,253,0.88);
+    }
+
+    .chips,
+    .grid,
+    .two,
+    .three,
+    .source-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .chips {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .chip strong,
+    .metric strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      opacity: 0.82;
+    }
+
+    .chip span,
+    .metric span {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 18px;
+      background: rgba(251, 255, 253, 0.92);
+      border: 1px solid rgba(45, 110, 104, 0.08);
+      padding: 22px;
+    }
+
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .metric,
+    .card,
+    .day,
+    .source {
+      border-radius: 18px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+
+    .metric {
+      border-left: 5px solid var(--accent);
+    }
+
+    .metric.ok { border-left-color: var(--accent-2); }
+    .metric.warn { border-left-color: var(--warn); }
+
+    .muted { color: var(--muted); }
+
+    .two {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .three {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .route {
+      display: grid;
+      gap: 12px;
+    }
+
+    .day {
+      border-left: 5px solid var(--accent);
+    }
+
+    .day strong {
+      display: inline-block;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .callout {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--soft-accent), #f5fbfa);
+      border: 1px solid #bfe0d9;
+    }
+
+    .callout.warn {
+      background: linear-gradient(135deg, var(--soft-warn), #fff8f3);
+      border-color: #efc9b5;
+    }
+
+    .callout.ok {
+      background: linear-gradient(135deg, var(--soft-ok), #f8fcf6);
+      border-color: #c9dcc2;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e7f0ec;
+      font-size: 12px;
+      font-weight: 700;
+      color: #315954;
+    }
+
+    .badge.warn {
+      background: #fbe5db;
+      color: #9d4b2d;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      background: #e7f1ee;
+      color: #4d6b66;
+      font-size: 13px;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .source-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    a { color: var(--accent); }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100vw - 16px, 1180px); margin: 8px auto 24px; }
+      .hero, .section { padding: 18px; border-radius: 20px; }
+      h2 { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">成都往返 · 4 天 · 九寨沟 + 周边</div>
+      <h1>九寨沟及周边 4 天攻略</h1>
+      <p class="sub">
+        适用时间：2026 年 4 月 26 日至 4 月 29 日。目标是用 4 天完成一条不赶、不赌、不把时间浪费在无效转运上的成都往返线路。核心思路是：九寨沟做主景区，黄龙做条件型次核心，松潘古城 / 川主寺做低风险周边补位。
+      </p>
+      <div class="chips">
+        <div class="chip"><strong>推荐主线</strong><span>高铁 + 官方接驳</span></div>
+        <div class="chip"><strong>核心景区</strong><span>九寨沟</span></div>
+        <div class="chip"><strong>周边优先级</strong><span>黄龙 &gt; 松潘</span></div>
+        <div class="chip"><strong>成都角色</strong><span>仅起终点</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 先看结论</h2>
+      <div class="grid">
+        <div class="metric ok">
+          <strong>最稳打法</strong>
+          <span>第一天只进九寨沟口，不进景区</span>
+          <p class="muted">从成都到黄龙九寨站再转接驳到沟口，第一天强行进沟只会把九寨沟玩成打卡，不划算。</p>
+        </div>
+        <div class="metric">
+          <strong>交通结论</strong>
+          <span>优先高铁 + 官方直通车</span>
+          <p class="muted">4 天时间里，高铁比全程公路更稳，且能避开九寨方向黑车、AB 合同和临时换车风险。</p>
+        </div>
+        <div class="metric warn">
+          <strong>最大坑点</strong>
+          <span>九寨沟方向非正规包车</span>
+          <p class="muted">历史样本里反复出现黑车设卡、租车代驾合同替代包车合同、临时丢客、返程赶不上高铁等问题。</p>
+        </div>
+        <div class="metric">
+          <strong>周边取舍</strong>
+          <span>黄龙只适合安排半天到一天</span>
+          <p class="muted">黄龙海拔更高，和九寨沟不是一个强度。如果状态一般或天气差，直接降级成松潘古城 / 川主寺更合理。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. 推荐路线</h2>
+      <div class="route">
+        <div class="day">
+          <strong>Day 1 | 成都 → 黄龙九寨站 → 九寨沟口</strong>
+          早上从成都东或成都南乘高铁到黄龙九寨站，出站后直接乘官方直通车到九寨沟口。当天只做入住、适应海拔、补给和早睡，不建议强行塞进景区游览。
+          <div class="badge-row">
+            <span class="badge">推荐住 2 晚沟口</span>
+            <span class="badge warn">不要当天强进九寨沟</span>
+          </div>
+        </div>
+        <div class="day">
+          <strong>Day 2 | 九寨沟全天</strong>
+          九寨沟是这趟行程的绝对核心日。建议一整天留给景区，不与任何跨城交通混搭。优先看日则沟与树正沟的经典点位，下午再补则查洼沟的长海、五彩池。
+        </div>
+        <div class="day">
+          <strong>Day 3 | 黄龙 / 松潘古城 / 川主寺 机动日</strong>
+          体力好、天气稳定、全员状态正常就去黄龙；如果有人高反、遇雨雪、或不想爬高海拔，就把这天改成松潘古城 + 川主寺的轻松线。不要既要黄龙又要塞太多支线。
+        </div>
+        <div class="day">
+          <strong>Day 4 | 黄龙九寨站 / 松潘站 → 成都</strong>
+          这天以稳定回成都为第一目标。无论你前一晚住沟口、川主寺还是松潘，都建议给车站预留至少 3 小时缓冲，不要把返程压太紧。
+        </div>
+      </div>
+      <div class="callout">
+        <strong>为什么这样排</strong>
+        4 天时间不够你把九寨沟、黄龙、牟尼沟、松潘古城全部深度玩完。正确做法是守住九寨沟主景区，再从黄龙和松潘里选一个更适合当天状态的补位项。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. 详细日程</h2>
+      <div class="two">
+        <div class="card">
+          <h3>Day 1 建议</h3>
+          <ul>
+            <li>成都出发后，优先坐高铁到黄龙九寨站。</li>
+            <li>官方历史口径显示，黄龙九寨站到九寨沟口有景区直通车，单程约 51 元/人。</li>
+            <li>到沟口后选择游客中心附近或漳扎镇一带住宿，方便第二天一早进沟。</li>
+            <li>晚上只做补给、确认门票、早点休息，不安排大运动量项目。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Day 2 九寨沟进沟建议</h3>
+          <ul>
+            <li>晚春已进入旺季，建议把核心拍摄放在上午光线稳定时段。</li>
+            <li>第一优先机位：镜海、五花海、珍珠滩瀑布。</li>
+            <li>第二优先机位：诺日朗瀑布、长海、五彩池。</li>
+            <li>如果体力一般，别试图每个点都下车，保核心点即可。</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge">亮色外套更出片</span>
+            <span class="badge warn">不要离开栈道</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Day 3 黄龙版</h3>
+          <ul>
+            <li>建议只安排黄龙一个核心景区，搭配松潘古城短停即可。</li>
+            <li>如果坐索道，优先“上索道、下行步道”，体力压力更小。</li>
+            <li>黄龙海拔显著高于九寨沟，若 Day 2 已明显不适，直接放弃黄龙。</li>
+            <li>黄龙更看天气，晴天时五彩池色彩表现最好。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Day 3 轻松替代版</h3>
+          <ul>
+            <li>如果不去黄龙，就去松潘古城 + 川主寺。</li>
+            <li>松潘古城更适合散步、人文和补位拍照，不太吃体力。</li>
+            <li>川主寺适合做中转与餐饮补给，不适合当重景点期待。</li>
+            <li>这条轻松版对老人、小孩、轻微高反人群更友好。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. 交通怎么选</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>方式</th>
+              <th>推荐度</th>
+              <th>适合人群</th>
+              <th>优点</th>
+              <th>风险</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>高铁 + 官方直通车</td>
+              <td>最高</td>
+              <td>大多数 2-6 人自由行</td>
+              <td>节奏稳、成本透明、少踩非正规用车坑</td>
+              <td>需要衔接车次，返程不能卡太死</td>
+            </tr>
+            <tr>
+              <td>全程包车 / 接送</td>
+              <td>中</td>
+              <td>多人、行李多、想灵活停靠</td>
+              <td>机动性更强，可兼顾松潘等周边</td>
+              <td>九寨方向用车市场混乱，合同与资质要审得更细</td>
+            </tr>
+            <tr>
+              <td>黑车 / 路边拼车</td>
+              <td>不推荐</td>
+              <td>不建议任何人</td>
+              <td>便宜</td>
+              <td>设卡、丢客、无资质、责任不清，风险远高于省下的钱</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <strong>九寨方向的用车坑和川西小环线不完全一样</strong>
+        本地历史样本里，九寨沟方向高频出现“包车合同被替换成租车+代驾合同”“返程前临时换无资质车辆”“司机看到设卡就要求游客配合说谎”等问题。用车如果不走官方接驳，就一定要审资质。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. 票务与当前口径</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>项目</th>
+              <th>当前可核验口径</th>
+              <th>备注</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>九寨沟门票</td>
+              <td>旺季 190 元 / 人</td>
+              <td>九寨沟管理局 2026 年 3 月 23 日旺季接待通告</td>
+            </tr>
+            <tr>
+              <td>九寨沟观光车</td>
+              <td>90 元 / 人</td>
+              <td>旺季票</td>
+            </tr>
+            <tr>
+              <td>九寨沟开放时间</td>
+              <td>入园 8:00 - 14:00，闭园 18:00</td>
+              <td>2026 年旺季通告口径</td>
+            </tr>
+            <tr>
+              <td>九寨沟预约方式</td>
+              <td>“九寨沟”公众号 / “九寨沟旅游官方平台” / “阿坝旅游”</td>
+              <td>实名预约，售罄即止</td>
+            </tr>
+            <tr>
+              <td>黄龙九寨站 → 九寨沟口</td>
+              <td>官方新闻曾公布单程 51 元 / 人</td>
+              <td>购票方式为“九旅悦行”小程序或现场下单；出发前再核一次</td>
+            </tr>
+            <tr>
+              <td>黄龙九寨站 → 黄龙景区</td>
+              <td>官方新闻曾公布单程 28 元 / 人</td>
+              <td>同上</td>
+            </tr>
+            <tr>
+              <td>黄龙门票</td>
+              <td>晚春通常处于淡季口径，近年官方通告为 12 月 16 日至次年 5 月 31 日全票 60 元 / 人</td>
+              <td>这是根据最近可得官方淡季通告作出的推断，出发前务必再核最新公告</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin-top:12px;">
+        说明：九寨沟的 2026 旺季口径已能从官网核验；黄龙 2026 年 4 月下旬的具体票价我未找到 2026 年正式公告，因此这里明确标注为基于最近官方通告的推断，建议出发前 3-7 天再次核验。
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>6. 九寨沟怎么拍，才不浪费核心日</h2>
+      <div class="three">
+        <div class="card">
+          <h3>晨间优先</h3>
+          <ul>
+            <li>镜海：早段更容易出倒影。</li>
+            <li>五花海：阳光起来后颜色层次更明显。</li>
+            <li>珍珠滩瀑布：适合抓水流层次感。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>中段重点</h3>
+          <ul>
+            <li>诺日朗瀑布：体量大，适合广角。</li>
+            <li>诺日朗中心站：适合作为换乘和补给节点。</li>
+            <li>别在中午最挤时把时间耗在低价值点位上。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>下午补位</h3>
+          <ul>
+            <li>长海：大景开阔，海拔也更高。</li>
+            <li>五彩池：晴天时颜色更讨好。</li>
+            <li>体力不足时，优先保五彩池，别硬撑全沟。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout ok">
+        <strong>穿搭建议</strong>
+        九寨沟水色偏蓝绿，穿白、红、橙、明黄会更容易从背景里跳出来。鞋子优先防滑和轻量，不要把人像拍摄建立在“穿得仙”但难走路上。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. 周边景点怎么取舍</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>景点</th>
+              <th>优先级</th>
+              <th>适合原因</th>
+              <th>不适合原因</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>黄龙</td>
+              <td>最高</td>
+              <td>名气和景观价值都高，是九寨沟周边最像“同级目的地”的补充</td>
+              <td>海拔更高，体力和天气要求更强</td>
+            </tr>
+            <tr>
+              <td>松潘古城</td>
+              <td>高</td>
+              <td>人文感强，走法轻松，适合作为 Day 3 的轻松版</td>
+              <td>景观冲击力不如黄龙</td>
+            </tr>
+            <tr>
+              <td>川主寺</td>
+              <td>中</td>
+              <td>补给、中转、吃饭方便</td>
+              <td>更像功能节点，不是强目的地</td>
+            </tr>
+            <tr>
+              <td>牟尼沟</td>
+              <td>中低</td>
+              <td>如果自驾或包车、且不想去黄龙，可做补充</td>
+              <td>4 天行程里优先级不如黄龙 / 松潘</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8. 九寨沟方向特有避坑点</h2>
+      <div class="two">
+        <div class="card">
+          <h3>交通坑</h3>
+          <ul>
+            <li>不要为了省几十块去坐黑车或路边拼车，历史样本明确出现过设卡、丢客、临时跑路。</li>
+            <li>返程去车站不要只留 1 小时级别缓冲，建议至少预留 3 小时。</li>
+            <li>如果你从黄龙出来再赶高铁，时间更要放宽，不要赌路况。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>包车坑</h3>
+          <ul>
+            <li>警惕“包车合同”临时变成“租车合同 + 代驾合同”。</li>
+            <li>车牌、车型、资质、保险都要在出发前确认，不要等司机路上发合同。</li>
+            <li>尾款不要在服务未完成前一次性付清，历史样本里有人被中途放鸽子。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>行程坑</h3>
+          <ul>
+            <li>不要把成都 → 九寨沟 → 当天进沟安排得过满。</li>
+            <li>不要把九寨沟和黄龙都压在同一天。</li>
+            <li>不要把黄龙视为“轻松散步景区”，它对体力和高反更敏感。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>票务坑</h3>
+          <ul>
+            <li>九寨沟旺季会售罄，官方已在 2025 年五一和 2026 年 3 月出现满额公告。</li>
+            <li>不要相信任何“低价票”“快速入园”“代抢内部票”。</li>
+            <li>景区内不能住宿，必须“沟内游、沟外住”。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout warn">
+        <strong>判断原则</strong>
+        九寨沟方向不是不能包车，而是只有在你能确认车辆资质、合同性质、司机资历都明确的前提下，包车才值得。否则高铁 + 官方接驳的稳定性更高。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>9. 预算怎么估</h2>
+      <div class="three">
+        <div class="card">
+          <h3>固定项</h3>
+          <ul>
+            <li>九寨沟：190 + 90 元</li>
+            <li>九寨沟保险：10 元，自愿</li>
+            <li>官方接驳：黄龙九寨站往返九寨沟口约 102 元 / 人</li>
+            <li>黄龙：按出发前官方实时口径计算</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>波动项</h3>
+          <ul>
+            <li>成都往返高铁票：以 12306 为准</li>
+            <li>沟口酒店：按房型和周末浮动明显</li>
+            <li>黄龙索道 / 景区交通：以购票页实时为准</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>容易被放大的项</h3>
+          <ul>
+            <li>非正规接送</li>
+            <li>临时加价包车</li>
+            <li>司机推荐的自费点或非必要停靠</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>10. 最终建议</h2>
+      <div class="grid">
+        <div class="metric ok">
+          <strong>如果你们重景色</strong>
+          <span>选九寨沟 + 黄龙</span>
+          <p class="muted">这是最标准、最像“来一趟值得”的 4 天组合。</p>
+        </div>
+        <div class="metric">
+          <strong>如果你们怕高反或想轻松</strong>
+          <span>选九寨沟 + 松潘古城</span>
+          <p class="muted">牺牲一点景观冲击力，换更稳的体验。</p>
+        </div>
+        <div class="metric warn">
+          <strong>不要这样排</strong>
+          <span>成都当天到达就进九寨沟</span>
+          <p class="muted">时间碎、体力碎、体验也碎。</p>
+        </div>
+        <div class="metric warn">
+          <strong>也不要这样赌</strong>
+          <span>黄龙出来直接卡点赶高铁</span>
+          <p class="muted">一旦路况或身体状态有波动，整天都很被动。</p>
+        </div>
+      </div>
+      <div class="callout ok">
+        <strong>一句话版</strong>
+        把九寨沟单独留出完整一天，把黄龙当成“状态允许就上”的第二核心，把松潘古城当作低风险替代，这就是你们这次 4 天成都往返最稳的打法。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>11. 信息依据</h2>
+      <div class="source-grid">
+        <div class="source">
+          <h3>官方口径</h3>
+          <ul>
+            <li><a href="https://www.jiuzhai.com/news/notice/11001-2026-03-23-01-36-44" target="_blank" rel="noopener noreferrer">九寨沟景区关于旺季旅游接待的通告</a></li>
+            <li><a href="https://www.jiuzhai.com/intelligent-service/tickets" target="_blank" rel="noopener noreferrer">九寨沟官方票务信息</a></li>
+            <li><a href="https://www.abatour.com/news/news/20240830140731459.html" target="_blank" rel="noopener noreferrer">黄龙九寨站 / 松潘站景区直通车信息</a></li>
+            <li><a href="https://www.abatour.com/news/notice/20241204094556282.html" target="_blank" rel="noopener noreferrer">黄龙景区进入淡季通告</a></li>
+            <li><a href="https://www.abatour.com/news/notice/20250418133751597.html" target="_blank" rel="noopener noreferrer">黄龙景区调整开园时间通告</a></li>
+          </ul>
+        </div>
+        <div class="source">
+          <h3>本地历史数据</h3>
+          <ul>
+            <li><code>xhs-auto-plan/profiles/jiuzhaigou_20260426_from_chengdu_to_tfu_20260430.json</code></li>
+            <li><code>output/temp_data/20260325_3q1q/raw/684318eb000000002301cb4b.json</code></li>
+            <li><code>output/temp_data/20260325_3q1q/raw/66f42226000000001a020759.json</code></li>
+          </ul>
+        </div>
+        <div class="source">
+          <h3>如何使用本文</h3>
+          <ul>
+            <li>用第 2 节和第 3 节直接订车票、订房。</li>
+            <li>用第 4 节和第 8 节判断要不要包车。</li>
+            <li>用第 5 节在出发前 3-7 天做最后一次票务核验。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small" style="margin-top:14px;">
+        备注：九寨沟的 2026 旺季政策已核验；黄龙 2026 年 4 月下旬的票价部分我明确标注为基于最近官方通告作出的推断，而不是已核验的 2026 正式公告。
+      </p>
+    </section>
+  </main>
+</body>
+</html>

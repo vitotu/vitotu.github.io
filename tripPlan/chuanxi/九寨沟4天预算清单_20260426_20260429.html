@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>九寨沟4天预算清单</title>
+  <style>
+    :root {
+      --bg: #eef5f4;
+      --paper: #fbfefd;
+      --ink: #253130;
+      --muted: #64706d;
+      --line: #cad9d4;
+      --accent: #2f7069;
+      --accent-2: #537c4a;
+      --warn: #ab5938;
+      --soft-accent: #e1f0ec;
+      --soft-ok: #e7f0e4;
+      --soft-warn: #fde9df;
+      --shadow: 0 18px 42px rgba(24, 61, 57, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(47, 112, 105, 0.12), transparent 24%),
+        linear-gradient(180deg, #edf4f3 0%, var(--bg) 100%);
+      line-height: 1.68;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100vw - 28px));
+      margin: 18px auto 44px;
+    }
+
+    .hero,
+    .section {
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 28px;
+      color: #f5fffd;
+      background: linear-gradient(135deg, rgba(27, 79, 74, 0.97), rgba(42, 58, 62, 0.98));
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 23px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 10px; }
+
+    .sub {
+      max-width: 860px;
+      color: rgba(245,255,253,0.88);
+    }
+
+    .chips,
+    .grid,
+    .three {
+      display: grid;
+      gap: 14px;
+    }
+
+    .chips {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      margin-top: 18px;
+    }
+
+    .chip,
+    .metric,
+    .card {
+      padding: 15px 16px;
+      border-radius: 18px;
+    }
+
+    .chip {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .chip strong,
+    .metric strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      opacity: 0.82;
+    }
+
+    .chip span,
+    .metric span {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 22px;
+      background: rgba(251, 254, 253, 0.94);
+      border: 1px solid rgba(47, 112, 105, 0.08);
+    }
+
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .metric,
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .metric {
+      border-left: 5px solid var(--accent);
+    }
+
+    .metric.ok { border-left-color: var(--accent-2); }
+    .metric.warn { border-left-color: var(--warn); }
+
+    .three {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .muted { color: var(--muted); }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      min-width: 780px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      background: #e8f1ee;
+      color: #506c67;
+      font-size: 13px;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .callout {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--soft-accent), #f5fbfa);
+      border: 1px solid #bddfd8;
+    }
+
+    .callout.ok {
+      background: linear-gradient(135deg, var(--soft-ok), #f8fcf6);
+      border-color: #cadcc4;
+    }
+
+    .callout.warn {
+      background: linear-gradient(135deg, var(--soft-warn), #fff8f4);
+      border-color: #efcdbc;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e5efeb;
+      color: #355d57;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .badge.warn {
+      background: #fbe4da;
+      color: #9e4d30;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    a { color: var(--accent); }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100vw - 16px, 1120px); margin: 8px auto 24px; }
+      .hero, .section { padding: 18px; border-radius: 20px; }
+      h2 { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">2026-04-26 至 2026-04-29</div>
+      <h1>九寨沟 4 天预算清单</h1>
+      <p class="sub">按自由行思路拆预算，默认成都往返、九寨沟为核心、黄龙可选。预算以人均为主，方便你们根据人数再换算总价。</p>
+      <div class="chips">
+        <div class="chip"><strong>预算口径</strong><span>人均</span></div>
+        <div class="chip"><strong>默认玩法</strong><span>高铁 + 官方接驳</span></div>
+        <div class="chip"><strong>核心固定项</strong><span>九寨沟门票 + 观光车</span></div>
+        <div class="chip"><strong>变量最大</strong><span>住宿与黄龙</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 先看总预算</h2>
+      <div class="grid">
+        <div class="metric ok">
+          <strong>极简版</strong>
+          <span>约 1200 - 1800 元 / 人</span>
+          <p class="muted">九寨沟 + 松潘轻松补位，不上黄龙索道，不追求高配酒店。</p>
+        </div>
+        <div class="metric">
+          <strong>平衡版</strong>
+          <span>约 1500 - 2300 元 / 人</span>
+          <p class="muted">九寨沟 + 黄龙，住中档沟口酒店，交通和吃饭相对舒服。</p>
+        </div>
+        <div class="metric warn">
+          <strong>舒适版</strong>
+          <span>约 2200 - 3200 元 / 人</span>
+          <p class="muted">高铁时间更优、酒店更好、黄龙可能走套票或索道，上下行更从容。</p>
+        </div>
+        <div class="metric">
+          <strong>两人总价参考</strong>
+          <span>约 2400 - 6400 元</span>
+          <p class="muted">适合情侣/朋友双人一间房的常见预算区间。</p>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>怎么理解这组数字</strong>
+        固定项其实不算高，真正拉开差距的是：高铁班次价差、沟口酒店档次、是否去黄龙、黄龙是否坐索道、以及吃饭想省还是想舒服。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. 固定预算项</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>项目</th>
+              <th>口径</th>
+              <th>人均预算</th>
+              <th>备注</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>成都 ↔ 黄龙九寨 高铁</td>
+              <td>二等座往返</td>
+              <td>约 256 - 298 元</td>
+              <td>公开票价样本显示单程二等座约 128 - 149 元，实际以 12306 为准。</td>
+            </tr>
+            <tr>
+              <td>黄龙九寨站 ↔ 九寨沟口</td>
+              <td>官方接驳往返</td>
+              <td>约 102 元</td>
+              <td>历史官方口径单程 51 元 / 人。</td>
+            </tr>
+            <tr>
+              <td>九寨沟门票</td>
+              <td>旺季全价</td>
+              <td>190 元</td>
+              <td>2026 旺季通告口径。</td>
+            </tr>
+            <tr>
+              <td>九寨沟观光车</td>
+              <td>旺季票</td>
+              <td>90 元</td>
+              <td>进沟基本视为必选。</td>
+            </tr>
+            <tr>
+              <td>九寨沟保险</td>
+              <td>自愿</td>
+              <td>约 10 元</td>
+              <td>可忽略不计，但通常会顺手买。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout ok">
+        <strong>固定项小结</strong>
+        不算黄龙的话，九寨沟这趟最核心的“确定支出”大约在 <strong>638 - 690 元 / 人</strong> 左右，高低差主要来自高铁票价。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. 住宿预算</h2>
+      <div class="three">
+        <div class="card">
+          <h3>经济型</h3>
+          <ul>
+            <li>房价：180 - 350 元 / 间 / 晚</li>
+            <li>按 2 人 1 间、住 3 晚计</li>
+            <li>人均约 270 - 525 元</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>舒适型</h3>
+          <ul>
+            <li>房价：350 - 650 元 / 间 / 晚</li>
+            <li>按 2 人 1 间、住 3 晚计</li>
+            <li>人均约 525 - 975 元</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>更高配</h3>
+          <ul>
+            <li>房价：650 元以上 / 间 / 晚</li>
+            <li>人均通常 1000 元以上</li>
+            <li>不太必要，除非你们很看重酒店品质</li>
+          </ul>
+        </div>
+      </div>
+      <div class="badge-row">
+        <span class="badge">默认建议住沟口 2 晚</span>
+        <span class="badge warn">不要为了便宜住太远</span>
+      </div>
+      <p class="small" style="margin-top:10px;">预算按“双人一间房”算最常见。如果 3-4 人同行能摊平房费，总人均还会再降一点。</p>
+    </section>
+
+    <section class="section">
+      <h2>4. 吃饭预算</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>风格</th>
+              <th>口径</th>
+              <th>4 天人均</th>
+              <th>适合谁</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>省钱型</td>
+              <td>早餐简单 + 正餐不追网红店</td>
+              <td>约 180 - 260 元</td>
+              <td>对餐饮要求不高，只求稳</td>
+            </tr>
+            <tr>
+              <td>平衡型</td>
+              <td>早餐正常、晚饭吃得舒服一点</td>
+              <td>约 260 - 420 元</td>
+              <td>大多数人</td>
+            </tr>
+            <tr>
+              <td>舒服型</td>
+              <td>晚餐会选环境或特色更好的店</td>
+              <td>约 420 - 700 元</td>
+              <td>不想在吃饭上抠细节</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <strong>餐饮预算建议</strong>
+        九寨沟这条线没必要为“吃得特别好”拉高整体预算。真正该花的钱是交通和住宿位置，饭只要稳定、干净、别太远就够了。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. 黄龙作为可选增量，预算怎么加</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>黄龙走法</th>
+              <th>新增项目</th>
+              <th>新增人均</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>最省版</td>
+              <td>门票 + 基础交通</td>
+              <td>约 116 - 140 元</td>
+              <td>按黄龙门票约 60 元 + 黄龙九寨站往返黄龙景区约 56 元估算；门票需出发前再核。</td>
+            </tr>
+            <tr>
+              <td>平衡版</td>
+              <td>门票 + 上行索道或套票思路</td>
+              <td>约 196 - 306 元</td>
+              <td>最近可见公开售卖页与阿坝旅游预售页出现过“黄龙全价套票 250 元”口径，可视为上索道版本的参考。</td>
+            </tr>
+            <tr>
+              <td>舒适版</td>
+              <td>索道 + 更从容交通 + 更好补给</td>
+              <td>约 280 - 450 元</td>
+              <td>包括更舒服的吃饭、可能的行李寄存或更高时间成本。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <strong>黄龙预算的关键</strong>
+        黄龙不是“必须花的钱”，而是“状态好才值得加的钱”。如果你们 Day 2 已经很累，直接把这笔钱省掉，改去松潘古城会更划算。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. 三种完整预算模型</h2>
+      <div class="three">
+        <div class="card">
+          <h3>极简版</h3>
+          <ul>
+            <li>高铁二等座按低位</li>
+            <li>九寨沟 + 松潘古城，不去黄龙</li>
+            <li>经济型住宿</li>
+            <li>省钱型吃饭</li>
+            <li><strong>人均约 1200 - 1600 元</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>平衡版</h3>
+          <ul>
+            <li>高铁二等座按中位</li>
+            <li>九寨沟 + 黄龙</li>
+            <li>舒适型住宿低位</li>
+            <li>平衡型吃饭</li>
+            <li><strong>人均约 1600 - 2300 元</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>舒适版</h3>
+          <ul>
+            <li>更优车次或更高票价区间</li>
+            <li>九寨沟 + 黄龙套票 / 索道</li>
+            <li>舒适型住宿高位</li>
+            <li>舒服型吃饭</li>
+            <li><strong>人均约 2300 - 3200 元</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. 如果按 2 人同行，怎么换算</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>版本</th>
+              <th>人均</th>
+              <th>2 人总价</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>极简版</td>
+              <td>1200 - 1600</td>
+              <td>2400 - 3200</td>
+              <td>最适合只想稳稳看九寨沟的组合</td>
+            </tr>
+            <tr>
+              <td>平衡版</td>
+              <td>1600 - 2300</td>
+              <td>3200 - 4600</td>
+              <td>大多数人会落在这里</td>
+            </tr>
+            <tr>
+              <td>舒适版</td>
+              <td>2300 - 3200</td>
+              <td>4600 - 6400</td>
+              <td>更像“把体验感买满”的版本</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8. 最值得省和最不该省的地方</h2>
+      <div class="grid">
+        <div class="metric ok">
+          <strong>最值得省</strong>
+          <span>Day 3 不强上黄龙</span>
+          <p class="muted">如果状态一般，直接省掉 100 - 300+ 元 / 人，还能换更轻松的节奏。</p>
+        </div>
+        <div class="metric ok">
+          <strong>也值得省</strong>
+          <span>不追高配酒店</span>
+          <p class="muted">九寨沟这条线酒店的边际收益不高，位置比装修更重要。</p>
+        </div>
+        <div class="metric warn">
+          <strong>最不该省</strong>
+          <span>黑车 / 非正规接送</span>
+          <p class="muted">这点省下的钱，换来的往往是最高的不确定性。</p>
+        </div>
+        <div class="metric warn">
+          <strong>也别省</strong>
+          <span>返程缓冲时间</span>
+          <p class="muted">赶车失败的成本远大于一晚酒店或一顿饭。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>9. 预算使用说明</h2>
+      <div class="three">
+        <div class="card">
+          <h3>你们如果只想看九寨沟</h3>
+          <ul>
+            <li>直接参考“极简版”。</li>
+            <li>Day 3 改松潘古城即可。</li>
+            <li>基本很难超 1800 / 人。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>你们如果想九寨沟 + 黄龙</h3>
+          <ul>
+            <li>直接参考“平衡版”。</li>
+            <li>默认黄龙是可执行但不乱花钱的版本。</li>
+            <li>大多数人落在 1600 - 2300 / 人。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>你们如果只想舒服</h3>
+          <ul>
+            <li>直接参考“舒适版”。</li>
+            <li>不要再纠结几十块钱差价。</li>
+            <li>重点是把车次、住宿和黄龙体力成本买舒服。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout ok">
+        <strong>一句话结论</strong>
+        这趟 4 天九寨沟自由行，不去黄龙的话很容易控制在 <strong>1200 - 1800 元 / 人</strong>；如果加黄龙，正常舒适预算大概率落在 <strong>1600 - 2300 元 / 人</strong>。
+      </div>
+      <p class="small" style="margin-top:14px;">
+        说明：本文中的九寨沟门票、观光车和接驳价格基于已核验官方口径；黄龙门票与套票部分包含对最近官方通告和预售页的推断，出发前仍建议最后核一次实时价格。
+      </p>
+    </section>
+  </main>
+</body>
+</html>

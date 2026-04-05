@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>川西小环线包车签约清单</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --paper: #fffaf4;
+      --ink: #2f2822;
+      --muted: #6f655c;
+      --line: #dbcdbb;
+      --accent: #8c4c2f;
+      --green: #43624e;
+      --soft-accent: #f6e4d9;
+      --soft-green: #e6f0ea;
+      --warn: #a44b33;
+      --soft-warn: #fde5dc;
+      --shadow: 0 18px 40px rgba(60, 39, 24, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(140, 76, 47, 0.10), transparent 24%),
+        linear-gradient(180deg, #efe6da, var(--bg));
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100vw - 28px));
+      margin: 18px auto 44px;
+    }
+
+    .hero,
+    .section {
+      background: rgba(255, 250, 244, 0.92);
+      border: 1px solid rgba(140, 76, 47, 0.10);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 28px;
+      background:
+        linear-gradient(135deg, rgba(140, 76, 47, 0.98), rgba(55, 44, 36, 0.98));
+      color: #fff8f2;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.20);
+      background: rgba(255,255,255,0.08);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 23px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 10px; }
+
+    .sub {
+      color: rgba(255, 248, 242, 0.86);
+      max-width: 860px;
+    }
+
+    .chips,
+    .grid,
+    .two,
+    .three {
+      display: grid;
+      gap: 14px;
+    }
+
+    .chips {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      margin-top: 18px;
+    }
+
+    .chip,
+    .card,
+    .check,
+    .metric {
+      border-radius: 18px;
+      padding: 15px 16px;
+    }
+
+    .chip {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .chip strong,
+    .metric strong {
+      display: block;
+      font-size: 12px;
+      opacity: 0.82;
+      margin-bottom: 4px;
+    }
+
+    .chip span,
+    .metric span {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 22px;
+    }
+
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .metric {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+    }
+
+    .metric.green { border-left-color: var(--green); }
+    .metric.warn { border-left-color: var(--warn); }
+
+    .muted { color: var(--muted); }
+
+    .two {
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+
+    .three {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .callout {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid #ecc9b8;
+      background: linear-gradient(135deg, var(--soft-accent), #fbf3ec);
+    }
+
+    .callout.green {
+      border-color: #c3d9c9;
+      background: linear-gradient(135deg, var(--soft-green), #f5faf6);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+    }
+
+    .check {
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .check .head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .box {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      border: 2px solid var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #efe3d2;
+    }
+
+    .tag.green {
+      background: var(--soft-green);
+      color: var(--green);
+    }
+
+    .tag.warn {
+      background: var(--soft-warn);
+      color: var(--warn);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li { margin-top: 7px; }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td {
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      background: #f2e6d8;
+      color: #6f5b4a;
+      font-size: 13px;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100vw - 16px, 1100px); margin: 8px auto 24px; }
+      .hero, .section { padding: 18px; border-radius: 20px; }
+      h2 { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">给服务商逐条对清楚</div>
+      <h1>川西小环线包车签约清单</h1>
+      <p class="sub">适配 4.30 - 5.4、5 个整天、成都仅出发返程的行程。用途很直接：签约前逐项核对，签约时逐项落字，出发前逐项留证据。</p>
+      <div class="chips">
+        <div class="chip"><strong>时间窗</strong><span>4.30 - 5.4</span></div>
+        <div class="chip"><strong>成都角色</strong><span>仅集散</span></div>
+        <div class="chip"><strong>签约原则</strong><span>未写明 = 高风险</span></div>
+        <div class="chip"><strong>使用方式</strong><span>逐条确认并截图</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 先抓 4 个核心</h2>
+      <div class="grid">
+        <div class="metric warn">
+          <strong>价格</strong>
+          <span>看口径，不看总价</span>
+          <p class="muted">总价必须拆成车费、司机食宿、保险、停车、垭口额外费用。</p>
+        </div>
+        <div class="metric">
+          <strong>车辆</strong>
+          <span>看具体车型和替代规则</span>
+          <p class="muted">不能只写“商务车”或“越野车”。</p>
+        </div>
+        <div class="metric green">
+          <strong>路线</strong>
+          <span>主线写死，支线条件化</span>
+          <p class="muted">四姑娘山、丹巴、墨石公园、塔公/新都桥、康定是主线。</p>
+        </div>
+        <div class="metric warn">
+          <strong>责任</strong>
+          <span>堵车、封路、高反都要预分责</span>
+          <p class="muted">不提前写，路上最容易扯皮。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. 付定金前清单</h2>
+      <div class="checklist">
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认服务商身份</strong></div>
+          <ul>
+            <li>要营业主体名称、联系人、联系电话。</li>
+            <li>问清是自营车队还是中间商转单。</li>
+            <li>至少要一版正式报价单或聊天里明确的费用清单。</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag warn">没主体信息不要付定金</span>
+          </div>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认车辆信息</strong></div>
+          <ul>
+            <li>写清车型、座位数、是否同级替代。</li>
+            <li>要车辆外观、内饰、后备箱实拍视频。</li>
+            <li>5-6 人要问清行李数量是否能放下。</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">推荐：GL8 / 7-9 座商务</span>
+            <span class="tag warn">只说“商务车”不够</span>
+          </div>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认司机信息</strong></div>
+          <ul>
+            <li>写清司机姓名、电话、驾龄、山路经验。</li>
+            <li>问清是否熟悉折多山、塔公、姑弄村、格底拉姆等典型路段。</li>
+            <li>问清能否临时换司机，换了后如何保证同等级。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认费用口径</strong></div>
+          <ul>
+            <li>总价是否包含车费、油费、路桥费、停车费、司机服务费。</li>
+            <li>司机食宿是否另算，若另算按每天多少、谁来订。</li>
+            <li>保险包含什么，是否有乘客座位险和第三者责任险。</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag warn">“全包”必须拆项</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. 合同里必须出现的条款</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>条款</th>
+              <th>必须写什么</th>
+              <th>不写会怎样</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>车型与替代</td>
+              <td>车型、座位数、同级替代标准、降级补偿</td>
+              <td>容易出现临时换车、车况变差、空间不足</td>
+            </tr>
+            <tr>
+              <td>司机</td>
+              <td>司机信息、是否可更换、更换条件</td>
+              <td>临时换新手司机或不熟路线司机</td>
+            </tr>
+            <tr>
+              <td>主线景点</td>
+              <td>四姑娘山、丹巴、墨石公园、塔公/新都桥、康定等主线节点</td>
+              <td>行程被任意删减，难以认定是否履约</td>
+            </tr>
+            <tr>
+              <td>条件景点</td>
+              <td>姑弄村、格底拉姆、甲根坝等写成天气/路况条件项</td>
+              <td>服务商用“上不去”一句带过，双方争议大</td>
+            </tr>
+            <tr>
+              <td>费用包含项</td>
+              <td>车费、油费、路桥、停车、司机服务费、司机食宿、保险</td>
+              <td>路上随时被补价</td>
+            </tr>
+            <tr>
+              <td>费用不包含项</td>
+              <td>门票、景区观光车、垭口清洁费、摆渡费是否包含</td>
+              <td>最容易临时出现“这是当地规定”</td>
+            </tr>
+            <tr>
+              <td>堵车与超时</td>
+              <td>常规节假日拥堵是否收费；主动加景点才触发加费</td>
+              <td>五一路上被收超时费</td>
+            </tr>
+            <tr>
+              <td>车辆故障</td>
+              <td>几小时内换车、谁承担转运成本</td>
+              <td>人在山路上，处理极被动</td>
+            </tr>
+            <tr>
+              <td>高反应急</td>
+              <td>司机需优先执行降海拔、就近就医、终止高风险点</td>
+              <td>司机为了赶行程不愿调整路线</td>
+            </tr>
+            <tr>
+              <td>取消退款</td>
+              <td>取消节点、定金比例、不可抗力处理</td>
+              <td>出发前变动就只剩“定金不退”</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <strong>实操建议</strong>
+        合同正文如果太简略，就把这张表直接变成补充条款。补充条款和正文一样有效，关键是要让对方明确接受。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. 支线景点专项确认</h2>
+      <div class="two">
+        <div class="card">
+          <h3>适合写成“条件可去”的</h3>
+          <ul>
+            <li>姑弄村：确认停车费口径，避免被包装成“辛苦费”。</li>
+            <li>格底拉姆：确认清洁费、上山方式、堵车后是否自动放弃并替换。</li>
+            <li>甲根坝：一般更稳，适合作为避开人流的替代点。</li>
+            <li>月亮湖：确认无信号、补给弱、是否需要额外越野路段。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>尽量不要写成硬承诺</h3>
+          <ul>
+            <li>鱼子西：五一拥堵、上山排队、高反风险都高。</li>
+            <li>空中花园：车型要求高，收费和上山方式容易变。</li>
+            <li>子梅垭口、冷噶错：高风险、高体能、高天气依赖，不适合塞进标准 5 天小环线。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout green">
+        <strong>合同推荐写法</strong>
+        “如鱼子西/格底拉姆/空中花园等支线因天气、堵车、封路、交通管制或团队成员身体原因无法执行，则由司机与客人现场协商替换为姑弄村、甲根坝、塔公周边同等级观景点，不视为供应商违约。”
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. 路上最容易追加收费的项目</h2>
+      <div class="three">
+        <div class="card">
+          <h3>高频</h3>
+          <ul>
+            <li>司机食宿</li>
+            <li>垭口清洁费</li>
+            <li>所谓摆渡费 / 上山费</li>
+            <li>停车费</li>
+            <li>堵车超时费</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>中频</h3>
+          <ul>
+            <li>临时换车补差价</li>
+            <li>景区接驳费</li>
+            <li>旅拍 / 无人机加价</li>
+            <li>氧气 / 防滑链临时收费</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>隐蔽</h3>
+          <ul>
+            <li>返点酒店</li>
+            <li>返点餐厅</li>
+            <li>返点骑马点 / 旅拍点</li>
+            <li>临时推荐的“必去机位”</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>一句话判断</strong>
+        任何额外收费，只要不是合同和费用清单里提前列出的，都应该先停下来问清，再决定是否接受。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. 出发前一天清单</h2>
+      <div class="checklist">
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认车和司机没有变化</strong></div>
+          <ul>
+            <li>再次确认车型、司机、出发时间、上车点。</li>
+            <li>如有变化，让对方把变更内容重新写入聊天确认。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认主线景点与备选点</strong></div>
+          <ul>
+            <li>把 5 天主线再次确认一次。</li>
+            <li>把支线景点的替代顺序确认一次。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认所有已知额外收费</strong></div>
+          <ul>
+            <li>四姑娘山门票与预约。</li>
+            <li>墨石公园门票。</li>
+            <li>可能发生的支线清洁费 / 摆渡费。</li>
+          </ul>
+        </div>
+        <div class="check">
+          <div class="head"><span class="box"></span><strong>确认安全物资</strong></div>
+          <ul>
+            <li>防滑链、氧气、药箱、充电口、纸巾、饮用水。</li>
+            <li>如果队伍里有人容易高反，把“优先降海拔”再说一遍。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. 现场留证据清单</h2>
+      <div class="two">
+        <div class="card">
+          <h3>必须保存</h3>
+          <ul>
+            <li>合同全文</li>
+            <li>付款记录</li>
+            <li>费用清单截图</li>
+            <li>车辆照片 / 车牌</li>
+            <li>保险截图</li>
+            <li>聊天里关于变更和加价的记录</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>一旦发生争议要补拍</h3>
+          <ul>
+            <li>现场收费牌或收费人员照片</li>
+            <li>司机口头加价的聊天或录音证据</li>
+            <li>实际到场车辆和合同车型不一致的照片</li>
+            <li>临时换司机、车辆故障、滞留现场情况</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout green">
+        <strong>证据优先级</strong>
+        合同 > 付款记录 > 聊天截图 > 现场照片。证据越早留，后面越省事。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8. 可直接发给服务商的 12 个问题</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>问题</th>
+              <th>你想拿到的答案</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>你们是自营车队还是中间协调？</td>
+              <td>明确主体，不要模糊回复。</td>
+            </tr>
+            <tr>
+              <td>本次具体车型是什么？能发内外饰和后备箱视频吗？</td>
+              <td>具体到车型，不接受“商务车”这类泛称。</td>
+            </tr>
+            <tr>
+              <td>司机是谁？驾龄和川西经验如何？</td>
+              <td>明确司机信息和山路经验。</td>
+            </tr>
+            <tr>
+              <td>总价包含哪些，哪些不包含？</td>
+              <td>拆成明细，不接受“全包”两个字。</td>
+            </tr>
+            <tr>
+              <td>司机食宿怎么计算？</td>
+              <td>确认是否包含，若不含按多少算。</td>
+            </tr>
+            <tr>
+              <td>堵车或交通管制导致晚到，会不会收超时费？</td>
+              <td>节假日常规拥堵不应额外收费。</td>
+            </tr>
+            <tr>
+              <td>如果车坏了或临时换车怎么处理？</td>
+              <td>要同级替换和补偿机制。</td>
+            </tr>
+            <tr>
+              <td>四姑娘山、墨石公园这些票谁来买？</td>
+              <td>责任边界清楚，别临时甩锅。</td>
+            </tr>
+            <tr>
+              <td>姑弄村、格底拉姆、鱼子西这类支线有哪些已知额外费用？</td>
+              <td>把清洁费、摆渡费提前说透。</td>
+            </tr>
+            <tr>
+              <td>如果天气、封路或高反导致上不了支线，你们的替代点是什么？</td>
+              <td>要明确替代方案。</td>
+            </tr>
+            <tr>
+              <td>能否把上述内容写进合同或补充条款？</td>
+              <td>愿意写，才说明愿意承担责任。</td>
+            </tr>
+            <tr>
+              <td>定金、尾款、取消退款规则是什么？</td>
+              <td>避免只剩一句“定金不退”。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>9. 最终判断标准</h2>
+      <div class="three">
+        <div class="card">
+          <h3>可以签</h3>
+          <ul>
+            <li>肯给主体信息</li>
+            <li>肯给车辆和司机信息</li>
+            <li>肯拆费用口径</li>
+            <li>肯写补充条款</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>再观察</h3>
+          <ul>
+            <li>价格正常，但回复慢、条款不完整</li>
+            <li>路线懂，但不愿写细</li>
+            <li>说可以签合同，但合同内容很空</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>不要签</h3>
+          <ul>
+            <li>明显低价</li>
+            <li>不肯写司机食宿和超时规则</li>
+            <li>不肯写替代方案和换车规则</li>
+            <li>只让你先交定金再说</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>最后一句</strong>
+        靠谱服务商的特征不是“承诺最满”，而是“边界最清楚”。谁把边界写清楚，谁更值得签。
+      </div>
+      <p class="small" style="margin-top:14px;">本文基于仓库内已有川西小环线历史资料和已整理的避坑要点生成，适合直接配合你的主攻略一起使用。</p>
+    </section>
+  </main>
+</body>
+</html>
