@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>川西小环线包车签约前终极攻略</title>
+  <style>
+    :root {
+      --bg: #f5efe4;
+      --paper: #fffaf1;
+      --ink: #2e261f;
+      --muted: #6f6457;
+      --line: #d9c9b2;
+      --accent: #8e4b2d;
+      --accent-2: #476a53;
+      --warn: #a9492e;
+      --soft-warn: #fbe2d8;
+      --ok: #315f46;
+      --soft-ok: #e4f0e8;
+      --chip: #efe1cf;
+      --shadow: 0 18px 45px rgba(69, 45, 24, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(142, 75, 45, 0.12), transparent 26%),
+        radial-gradient(circle at top right, rgba(71, 106, 83, 0.14), transparent 24%),
+        linear-gradient(180deg, #f2e9dc 0%, var(--bg) 34%, #f7f2ea 100%);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 24px auto 56px;
+    }
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(142, 75, 45, 0.96), rgba(55, 43, 31, 0.96)),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+      color: #fff8f1;
+      border-radius: 30px;
+      padding: 34px 34px 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -120px -120px auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      background: rgba(255,255,255,0.07);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 14px 0 18px;
+      max-width: 820px;
+      color: rgba(255, 248, 241, 0.88);
+      font-size: 16px;
+    }
+
+    .chips,
+    .grid,
+    .two,
+    .three {
+      display: grid;
+      gap: 14px;
+    }
+
+    .chips {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      margin-top: 18px;
+    }
+
+    .chip {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px;
+      padding: 14px 16px;
+    }
+
+    .chip strong,
+    .metric strong {
+      display: block;
+      font-size: 13px;
+      opacity: 0.78;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .chip span,
+    .metric span {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 22px;
+      background: rgba(255, 250, 241, 0.82);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(142, 75, 45, 0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid.metrics {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .metric,
+    .card,
+    .route-day,
+    .source-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .metric {
+      border-left: 5px solid var(--accent);
+    }
+
+    .metric.ok {
+      border-left-color: var(--accent-2);
+    }
+
+    .metric.warn {
+      border-left-color: var(--warn);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .badge.ok {
+      background: var(--soft-ok);
+      color: var(--ok);
+    }
+
+    .badge.warn {
+      background: var(--soft-warn);
+      color: var(--warn);
+    }
+
+    .two {
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    }
+
+    .three {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 780px;
+    }
+
+    th,
+    td {
+      padding: 14px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      background: #f2e6d5;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6e5845;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .route {
+      display: grid;
+      gap: 12px;
+    }
+
+    .route-day {
+      border-left: 5px solid var(--accent-2);
+    }
+
+    .route-day strong {
+      display: inline-block;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .callout {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f8e8dd, #f9f4eb);
+      border: 1px solid #ebc6b4;
+    }
+
+    .callout.ok {
+      background: linear-gradient(135deg, #e6f1e9, #f4fbf5);
+      border-color: #bfd9c7;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100vw - 18px, 1180px);
+        margin: 10px auto 28px;
+      }
+
+      .hero,
+      .section {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+
+      th,
+      td {
+        padding: 12px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">签合同前先把坑想明白</div>
+      <h1>川西小环线包车签约前终极攻略</h1>
+      <p class="subtitle">
+        面向 5-6 人、成都出发、五一窗口期的包车决策稿。重点不是“怎么玩得更理想”，而是“哪些条件必须写进合同、哪些景点不能被司机或服务商随意拿来加价、哪些五一常见风险要预先分清责任”。
+      </p>
+      <div class="chips">
+        <div class="chip"><strong>适用时间</strong><span>4.30 - 5.5</span></div>
+        <div class="chip"><strong>适合人数</strong><span>5-6 人</span></div>
+        <div class="chip"><strong>推荐车型</strong><span>GL8 / 7-9 座商务</span></div>
+        <div class="chip"><strong>签约原则</strong><span>主线写死，支线条件化</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>1. 先看结论</h2>
+      <div class="grid metrics">
+        <div class="metric warn">
+          <strong>最大风险</strong>
+          <span>不是价格高，而是低价成交后在路上补差价</span>
+          <p class="muted">五一最容易出问题的是临时换车、司机食宿扯皮、垭口摆渡费二次收费、堵车后临时收超时费。</p>
+        </div>
+        <div class="metric ok">
+          <strong>路线策略</strong>
+          <span>四姑娘山 - 丹巴 - 墨石公园 - 塔公/新都桥 - 康定</span>
+          <p class="muted">这是五一最稳的小环线主骨架；鱼子西、格底拉姆、空中花园、子梅垭口、冷噶错都不适合写成硬性承诺景点。</p>
+        </div>
+        <div class="metric">
+          <strong>车型结论</strong>
+          <span>5-6 人优先 7-9 座商务车</span>
+          <p class="muted">5 人带 5 个 24 寸箱，普通 SUV 大概率不够；7 座车如果最后一排常坐人，舒适性会明显下降。</p>
+        </div>
+        <div class="metric warn">
+          <strong>签约底线</strong>
+          <span>合同要写“包含项、条件项、替代方案”</span>
+          <p class="muted">只写一个总价没意义。必须把司机食宿、保险、停车、堵车超时、临时封路替代点、换车机制全部写死。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. 川西小环线怎么拆成“必走主线”和“条件支线”</h2>
+      <div class="two">
+        <div class="card">
+          <h3>建议写进合同的主线骨架</h3>
+          <ul>
+            <li>成都 → 四姑娘山镇 → 双桥沟 → 丹巴 → 墨石公园 → 塔公草原/木雅金塔 → 新都桥/康定 → 成都。</li>
+            <li>这条骨架基础设施成熟、住宿选择多、海拔爬升相对温和、五一可执行性最高。</li>
+            <li>真正适合“签约承诺”的，是到达主线节点和完成主线景点，不是保证每一个网红垭口都能上山。</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge ok">可写死</span>
+            <span class="badge">四姑娘山</span>
+            <span class="badge">丹巴</span>
+            <span class="badge">墨石公园</span>
+            <span class="badge">塔公</span>
+            <span class="badge">康定</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>只适合写成条件项的支线</h3>
+          <ul>
+            <li>姑弄村、格底拉姆、甲根坝、月亮湖：可作为天气好、堵车轻、全员状态正常时的加分项。</li>
+            <li>空中花园、子梅垭口、冷噶错：更像高风险支线，不适合被写成“五一必达”。</li>
+            <li>鱼子西名气大，但五一拥堵和高反风险都高，更适合写成“如上山排队严重则自动替换为姑弄村/格底拉姆/云绕雅拉同等级机位”。</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge warn">条件化</span>
+            <span class="badge">鱼子西</span>
+            <span class="badge">格底拉姆</span>
+            <span class="badge">空中花园</span>
+            <span class="badge">子梅垭口</span>
+            <span class="badge">冷噶错</span>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:14px">
+        <strong>签约建议</strong>
+        合同里把景点分三层：A 级主线必达、B 级天气/路况条件达成、C 级不可抗力自动替代。这样一旦遇到堵车、封路、下雪或高反，不会因为“到底算不算履约”发生扯皮。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. 推荐执行路线：6 天经典平衡版</h2>
+      <div class="route">
+        <div class="route-day">
+          <strong>Day 1 | 成都 - 四姑娘山镇</strong>
+          建议 07:00 前出发。当天以赶路和适应海拔为主，猫鼻梁可视天气打卡。不要第一天直冲鱼子西或更高垭口。
+        </div>
+        <div class="route-day">
+          <strong>Day 2 | 四姑娘山双桥沟全天</strong>
+          五一核心票务风险日。四姑娘山门票和观光车票要提前锁定，景区末班观光车时间也要提前确认。
+        </div>
+        <div class="route-day">
+          <strong>Day 3 | 四姑娘山 - 丹巴 - 墨石公园 - 塔公/八美</strong>
+          丹巴和墨石公园是人文与地貌组合拳，照片丰富度高。墨石公园更适合下午光线，但五一排队会更重。
+        </div>
+        <div class="route-day">
+          <strong>Day 4 | 塔公 - 姑弄村 / 格底拉姆 - 新都桥 / 康定</strong>
+          这是最适合写入“条件景点”的一天。天气好、路况轻、司机熟悉山路时，可上支线；否则守住塔公和新都桥即可。
+        </div>
+        <div class="route-day">
+          <strong>Day 5 | 新都桥 / 康定 - 甲根坝 / 折多山 - 康定</strong>
+          甲根坝适合做五一避人流替代，折多山只适合看实时路况顺带打卡，不适合押宝。
+        </div>
+        <div class="route-day">
+          <strong>Day 6 | 康定 - 泸定 - 雅安 - 成都</strong>
+          返程日不要安排重景点；目标是稳定回到成都。雅康高速下午拥堵概率高，尽量上午出发。
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. 选包车服务商：怎么分辨谁更稳</h2>
+      <div class="three">
+        <div class="card">
+          <h3>优先选</h3>
+          <ul>
+            <li>能提供正式合同、营业信息、车辆信息、保险信息的本地自营车队。</li>
+            <li>能提前确认司机姓名、驾龄、山路经验、是否熟悉折多山/塔公/鱼子西等常见难点的服务商。</li>
+            <li>接受“先看合同与包含项，再付定金”的渠道。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>谨慎选</h3>
+          <ul>
+            <li>只在私聊里报总价，不愿列出包含项和不包含项。</li>
+            <li>说“路线你们随便改，随便去哪都不加钱”，但不写每天服务时长和车辆级别。</li>
+            <li>用“司导、航拍、旅拍、本地熟人资源”抬价，却不给样片或设备说明。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>尽量避开</h3>
+          <ul>
+            <li>报价明显低于市场，但不说明为什么低。</li>
+            <li>只收微信口头定金，没有合同，没有企业信息，没有车牌或车辆视频。</li>
+            <li>承诺“所有垭口都能去”，却不谈天气、封路、当地摆渡规则和高海拔风险。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout ok" style="margin-top:14px">
+        <strong>判断逻辑</strong>
+        五一最稳的不是“最低价”，而是“信息透明度最高”。谁肯把费用、换车、保险、堵车、取消、替代点写清楚，谁更值得签。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. 五一历史报价怎么读</h2>
+      <p class="muted">下面不是官方指导价，而是基于仓库内历史样本、评论口径和已生成报告归纳出的签约参考区间。重点看“口径”，不要只看单个数字。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>车型 / 口径</th>
+              <th>历史低价样本</th>
+              <th>五一常见成交参考</th>
+              <th>容易漏掉的费用</th>
+              <th>结论</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>普通 SUV / 城市越野</td>
+              <td>广告底价常见 650-800 元/天</td>
+              <td>五一更可信的成交参考约 900-1100 元/天</td>
+              <td>司机食宿、停车、清洁费、超时费</td>
+              <td>低于 800 元/天通常要高度警惕是否存在二次加价。</td>
+            </tr>
+            <tr>
+              <td>坦克 300 / BJ40 / 坦克 400</td>
+              <td>广告底价常见 800-1100 元/天</td>
+              <td>五一参考约 1100-1500 元/天；样本里也出现过“坦克 400，1500 合适”的评论口径</td>
+              <td>司机食宿、垭口上山费、车辆损耗费</td>
+              <td>支线多、土路多时有价值；如果主线为主，未必比商务车更合算。</td>
+            </tr>
+            <tr>
+              <td>GL8 / 7-9 座商务车</td>
+              <td>非五一样本出现过 900 元/天车费 + 180 元/天司机食宿</td>
+              <td>五一更可信参考约 1100-1500 元/天；若强调全包、熟练司机、旅拍能力，价格会更高</td>
+              <td>司机食宿是否另算、停车费、景区接驳</td>
+              <td>5-6 人最推荐，空间与舒适度最平衡。</td>
+            </tr>
+            <tr>
+              <td>司机食宿</td>
+              <td>历史样本见过 180 元/天包食宿</td>
+              <td>五一更常见 200-300 元/天</td>
+              <td>是否跟客人同住同吃、是否由客人现场结算</td>
+              <td>最容易扯皮，必须单独写明。</td>
+            </tr>
+            <tr>
+              <td>住宿波动</td>
+              <td>非节假日 200-400 元的房间</td>
+              <td>五一样本里新都桥供氧酒店可跳涨至 800+ 元</td>
+              <td>供氧设备、热水、隔音、临时降级</td>
+              <td>酒店建议自己订可退房，不建议全权交给司机代订。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer-note">
+        口径说明：仓库内已有报告把 2024-2025 五一数据归纳为普通 SUV 900-1100、硬派越野 1100-1300、GL8 1100-1500 左右；广告帖中的 650/800/800 级别更像“引流起步价”，不能直接当五一签约价。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. 合同里必须写死的 10 个条款</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>条款</th>
+              <th>为什么必须写</th>
+              <th>建议写法</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>车辆与替换规则</td>
+              <td>五一最常见的纠纷之一就是临时换成更差的车。</td>
+              <td>写明车型、年份区间、座位数、车牌或同等级替代标准；若降级，写退款或补偿规则。</td>
+            </tr>
+            <tr>
+              <td>司机信息</td>
+              <td>很多纠纷来自临时换司机、司机不熟路线、山路经验不足。</td>
+              <td>写明司机姓名、联系电话、驾龄、是否可因特殊原因更换、更换后需不低于同等经验。</td>
+            </tr>
+            <tr>
+              <td>费用包含项</td>
+              <td>“全包”三个字最容易被滥用。</td>
+              <td>逐项列明：车费、油费、路桥费、停车费、司机服务费、司机食宿、基础保险是否包含。</td>
+            </tr>
+            <tr>
+              <td>费用不包含项</td>
+              <td>垭口清洁费、摆渡费、门票最容易临时口头加价。</td>
+              <td>把所有可能发生的额外项目列成清单；未列出的，默认供应商不得现场新增。</td>
+            </tr>
+            <tr>
+              <td>堵车与超时</td>
+              <td>折多山、塔公、新都桥在五一堵车非常常见。</td>
+              <td>写明因常规节假日拥堵、临时交通管制导致的超时，不额外收费；只有客人主动加景点才触发加费。</td>
+            </tr>
+            <tr>
+              <td>景点分级与替代</td>
+              <td>天气、封路、高反导致景点无法执行时，最容易互相甩锅。</td>
+              <td>写明 A 级必达主线、B 级条件景点、C 级替代景点；若 B 级无法前往，不构成供应商违约。</td>
+            </tr>
+            <tr>
+              <td>车辆故障与救援</td>
+              <td>山路上抛锚后最怕没有替代方案。</td>
+              <td>写明故障后 X 小时内安排同等级车辆或其他转运；由供应商承担额外转运成本。</td>
+            </tr>
+            <tr>
+              <td>医疗与高反应急</td>
+              <td>高反不是小概率事件，尤其不要在第一晚硬冲高海拔垭口。</td>
+              <td>写明客人出现明显高反时，司机需优先执行降海拔、就近卫生院/医院、终止高风险景点等安全处置。</td>
+            </tr>
+            <tr>
+              <td>取消与退款</td>
+              <td>提前很久订车，临近五一最容易产生变动。</td>
+              <td>写明双方取消节点、定金比例、不可抗力处理；避免只有“定金不退”一句话。</td>
+            </tr>
+            <tr>
+              <td>发票与证据</td>
+              <td>事后维权靠证据，不靠聊天气氛。</td>
+              <td>至少保留合同、付款记录、聊天截图、费用清单、车辆照片、保险截图、现场收费照片。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. 包车服务最常见的坑</h2>
+      <div class="three">
+        <div class="card">
+          <h3>签约前</h3>
+          <ul>
+            <li>低价引流：先用明显偏低的日价成交，出发前或路上再补司机食宿、换车差价。</li>
+            <li>二房东转单：表面是“本地车队”，实际自己没有车没有司机，只负责卖单。</li>
+            <li>车型模糊：只说“商务车”或“越野车”，不说具体车型和载人载物能力。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>路上</h3>
+          <ul>
+            <li>垭口双收费：当地清洁费之外，再被司机加收所谓摆渡费、辛苦费、上山费。</li>
+            <li>网红点强推：司机主推返点酒店、餐厅、旅拍、氧气站、骑马点。</li>
+            <li>司机情绪化：暴躁驾驶、边开车边看手机、抽烟、赶时间飙车。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>事后</h3>
+          <ul>
+            <li>说好的无人机、单反、领队服务，到现场变成“能拍但不保证质量”。</li>
+            <li>行程删减后不退差价，或者把封路归咎为客人原因。</li>
+            <li>车队和司机互相甩锅：司机说是旅行社问题，旅行社说是司机个人行为。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:14px">
+        <strong>一句话抓重点</strong>
+        只要一笔钱没有在合同清单里出现，它就可能在路上以“当地规则”“现在涨价”“山路损耗”“司机辛苦费”等形式重新出现。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8. 旅行过程中容易踩的坑</h2>
+      <div class="two">
+        <div class="card">
+          <h3>路况与时间坑</h3>
+          <ul>
+            <li>4 月 30 日如果不抢早，出成都和返成都都可能被高速与核心节点堵死。</li>
+            <li>折多山、塔公镇、新都桥、鱼子西/格底拉姆上山口，都是五一常见瓶颈。</li>
+            <li>下午云量和阵雨上升，想拍雪山和倒影应尽量把核心景点安排在上午或傍晚前稳定时段。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>高反与体能坑</h3>
+          <ul>
+            <li>第一晚不建议直接住更高海拔支线点，更不建议第一天冲鱼子西、冷噶错。</li>
+            <li>“有供氧酒店”不等于“有医疗保障”；新都桥住宿多，但不是正规医疗替代。</li>
+            <li>土拨鼠、日照金山、雪山无遮挡这些都受天气影响，不能写成商家交付结果。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>门票与预约坑</h3>
+          <ul>
+            <li>四姑娘山双桥沟是核心门票风险点，五一需提前抢票；没票会直接打乱整条主线。</li>
+            <li>墨石公园五一常见排队，进园速度会影响后续塔公和新都桥落地时间。</li>
+            <li>临时把景点票务交给司机代买，容易被动接受不透明加价或劣质时段票。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>住宿与餐饮坑</h3>
+          <ul>
+            <li>五一酒店跳价快，尤其新都桥、四姑娘山镇、康定；建议自己锁可退订单。</li>
+            <li>司机带去的餐厅、藏服店、骑马点，很多存在返点逻辑。</li>
+            <li>老旧民宿的热水、隔音、保暖、制氧设备都可能与宣传不一致。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>9. 景点与出片指南</h2>
+      <p class="muted">重点不是“哪里都去”，而是分辨哪些是小环线高性价比主线机位，哪些只是五一高风险网红点。</p>
+
+      <h3 style="margin-top:18px">9.1 主线核心景点</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>景点</th>
+              <th>最佳时段</th>
+              <th>出片关键词</th>
+              <th>风险提示</th>
+              <th>合同建议</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>四姑娘山双桥沟</td>
+              <td>09:00 - 11:00</td>
+              <td>红杉林、布达拉峰、猫鼻梁全景；鲜艳冲锋衣最出片</td>
+              <td>五一抢票和观光车排队是最大变量</td>
+              <td>写成 A 级必达景点，提前预约责任需明确</td>
+            </tr>
+            <tr>
+              <td>丹巴 / 中路或甲居藏寨</td>
+              <td>清晨、傍晚</td>
+              <td>藏寨、碉楼、晨雾、藏服</td>
+              <td>盘山路窄，观景点之间切换耗时</td>
+              <td>可写成 A 级主线，具体藏寨点位写“二选一”更稳</td>
+            </tr>
+            <tr>
+              <td>墨石公园</td>
+              <td>下午光影最好</td>
+              <td>黑灰色地貌、异星感、长焦压缩感</td>
+              <td>五一进园排队长，热门栈道拥挤</td>
+              <td>写成 A 级主线，接受“如超长排队则压缩停留”</td>
+            </tr>
+            <tr>
+              <td>塔公草原 / 木雅金塔</td>
+              <td>下午</td>
+              <td>经幡、金塔、草原与雅拉雪山同框</td>
+              <td>塔公镇堵车、停车位紧张</td>
+              <td>写成 A 级主线，适合作为雅拉雪山稳妥观景点</td>
+            </tr>
+            <tr>
+              <td>新都桥</td>
+              <td>日落前后</td>
+              <td>光影公路、藏房、牧场、层次云</td>
+              <td>住宿和交通压力都很大</td>
+              <td>适合作为住宿节点，不必强行堆太多收费机位</td>
+            </tr>
+            <tr>
+              <td>康定</td>
+              <td>夜景</td>
+              <td>折多河、情歌广场、城市补给感</td>
+              <td>节假日住宿涨价明显</td>
+              <td>建议写为返程缓冲地，降低高反和返程风险</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:18px">9.2 高出片但适合“条件纳入”的景点</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>景点</th>
+              <th>最佳时段</th>
+              <th>出片关键词</th>
+              <th>典型坑点</th>
+              <th>建议</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>姑弄村</td>
+              <td>16:00 后</td>
+              <td>雅拉雪山、溪流、草甸、轻露营感</td>
+              <td>停车费容易被放大成“辛苦费”</td>
+              <td>可作为鱼子西替代，五一性价比更高</td>
+            </tr>
+            <tr>
+              <td>格底拉姆</td>
+              <td>18:00 后</td>
+              <td>红房子、灯塔、旋转木马、雅拉金山</td>
+              <td>上山拥堵、土路、拍照排队、清洁费口径不一</td>
+              <td>适合作为 B 级条件景点，不建议硬性承诺</td>
+            </tr>
+            <tr>
+              <td>甲根坝</td>
+              <td>上午</td>
+              <td>田园、俄色树、藏房、公路人像</td>
+              <td>村道窄，部分机位分散</td>
+              <td>五一避开新都桥主拥堵区的优质替代点</td>
+            </tr>
+            <tr>
+              <td>月亮湖</td>
+              <td>阳光直射时</td>
+              <td>蓝色湖水、枯树、草甸、电影感</td>
+              <td>无信号、补给弱、清洁费常见</td>
+              <td>适合天气好的半天支线，不适合全队体能差时前往</td>
+            </tr>
+            <tr>
+              <td>空中花园</td>
+              <td>17:00 后</td>
+              <td>贡嘎视角、悬崖感、大景纵深</td>
+              <td>路烂、车型要求高、摆渡费和上山费容易乱</td>
+              <td>除非明确用越野车且写清收费，不建议写入刚性行程</td>
+            </tr>
+            <tr>
+              <td>折多山</td>
+              <td>天气好时随路打卡</td>
+              <td>经幡、垭口标志、雪线感</td>
+              <td>五一全线大堵点、可能下雪、风大</td>
+              <td>只适合看实时路况顺带打卡，不适合押注停留时长</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:18px">9.3 不建议纳入小环线硬承诺的高风险点</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>景点</th>
+              <th>为什么容易失控</th>
+              <th>成本结构</th>
+              <th>签约建议</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>子梅垭口</td>
+              <td>长距离土路、天气敏感、车辆要求高，五一可能遇雪或封闭</td>
+              <td>通常涉及越野车、进山协调、额外时间成本</td>
+              <td>如非专门贡嘎西坡线路，不建议塞进标准小环线</td>
+            </tr>
+            <tr>
+              <td>冷噶错</td>
+              <td>高海拔 + 徒步或骑马，对体力和天气要求都高</td>
+              <td>往往包含面包车、骑马、清洁费等多重收费</td>
+              <td>不要写“必须到湖边看倒影”，只能写成独立高风险备选</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>10. 签约前提问清单</h2>
+      <div class="two">
+        <div class="card">
+          <h3>必须逐条问清</h3>
+          <ul>
+            <li>总价到底含不含司机食宿？如果不含，每天按多少算、谁来订。</li>
+            <li>是否含油费、过路费、停车费、保险、常规拥堵等待时间。</li>
+            <li>哪些景点可能有清洁费、摆渡费、上山费，分别由谁承担。</li>
+            <li>如果封路、下雪、堵车、景区限流，替代路线和费用怎么处理。</li>
+            <li>临时换车、换司机、车辆故障的补救机制是什么。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>最好补充确认</h3>
+          <ul>
+            <li>是否配防滑链、氧气、应急药箱、充电接口。</li>
+            <li>是否允许你自己订酒店和门票，不强制跟司机渠道走。</li>
+            <li>每天默认服务时间和公里数是否有限制。</li>
+            <li>司机是否抽烟、是否能接受车内禁烟、是否熟悉摄影点位。</li>
+            <li>是否能提前发车辆外观、内饰、后备箱实拍视频。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout ok" style="margin-top:14px">
+        <strong>最实用的签约姿势</strong>
+        先让对方发“费用明细 + 车辆信息 + 景点条件说明”，你再把这三块直接拷进合同。合同不是另起炉灶，而是把对方口头承诺固化下来。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>11. 信息依据与使用方式</h2>
+      <div class="source-grid">
+        <div class="source-card">
+          <h3>已使用的本地资料</h3>
+          <ul>
+            <li><code>output/五一川西小环线/包车服务与合同避坑指南.md</code></li>
+            <li><code>output/川西小环线包车攻略_20260328.md</code></li>
+            <li><code>output/五一川西小环线/景点清单.json</code></li>
+            <li><code>output/temp_data/task_260323cxbc_成都出发川西小环线包车.json</code></li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <h3>重点参考的历史样本口径</h3>
+          <ul>
+            <li>价格与车型：<code>686d271f...</code>、<code>69c13f7f...</code>、<code>68009bb6...</code></li>
+            <li>垭口收费与二次加价：<code>69039ca0...</code>、<code>68ec7597...</code></li>
+            <li>换车、转单、责任不清：<code>67030aa3...</code>、<code>69bd52f2...</code></li>
+            <li>五一住宿与路线波动：<code>69b11df2...</code></li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <h3>怎么正确使用本攻略</h3>
+          <ul>
+            <li>把第 5 节的价格表拿去判断报价是否异常。</li>
+            <li>把第 6 节条款表直接转成你的合同补充条款。</li>
+            <li>把第 9 节景点分级用于和司机确认“主线 / 条件项 / 替代项”。</li>
+            <li>凡是没有写进合同的收费，默认都属于高风险项。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-note">
+        说明：本文基于仓库内已有历史归档和通用旅行知识整理，不是实时抓取版价格系统。涉及节假日路况、天气、景区临时管制时，应以出发前 3-7 天的实际通知为准；但即便临时情况变化，合同里的责任划分仍然应提前写清。
+      </div>
+    </section>
+  </main>
+</body>
+</html>
