@@ -1,9 +1,82 @@
-<!doctype html>
+#!/usr/bin/env node
+
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+const rootDir = process.cwd();
+
+const pages = [
+  {
+    dir: 'tripPlan/chuanxi',
+    indexFile: 'index.html',
+    title: '川西与九寨沟攻略导航',
+    eyebrow: 'Trip Plan / Chuanxi',
+    summary:
+      '这里收纳了当前目录下除本页外的全部四川旅行攻略页面，包含川西小环线、九寨沟自由行、预算清单与包车避坑内容。',
+    backHref: '../index.html',
+    backLabel: '返回 tripPlan 首页',
+  },
+];
+
+async function main() {
+  for (const page of pages) {
+    await generateIndex(page);
+  }
+}
+
+async function generateIndex(page) {
+  const dirPath = path.join(rootDir, page.dir);
+  const fileNames = await fs.readdir(dirPath);
+  const htmlFiles = fileNames
+    .filter((fileName) => fileName.endsWith('.html'))
+    .filter((fileName) => !fileName.startsWith('.'))
+    .filter((fileName) => fileName !== page.indexFile)
+    .sort((left, right) => left.localeCompare(right, 'zh-Hans-CN-u-co-pinyin', { numeric: true }));
+
+  const items = [];
+  for (const fileName of htmlFiles) {
+    const filePath = path.join(dirPath, fileName);
+    const title = await readHtmlTitle(filePath);
+    items.push({
+      fileName,
+      title,
+    });
+  }
+
+  const html = renderPage(page, items);
+  const indexPath = path.join(dirPath, page.indexFile);
+  await fs.writeFile(indexPath, html, 'utf8');
+}
+
+async function readHtmlTitle(filePath) {
+  const content = await fs.readFile(filePath, 'utf8');
+  const match = content.match(/<title>([\s\S]*?)<\/title>/i);
+
+  if (!match) {
+    return path.basename(filePath, '.html');
+  }
+
+  return decodeHtml(match[1].trim());
+}
+
+function renderPage(page, items) {
+  const listMarkup = items
+    .map(
+      (item) => `        <li>
+          <a href="${escapeHtml(item.fileName)}">
+            <span class="item-title">${escapeHtml(item.title)}</span>
+            <span class="item-file">${escapeHtml(item.fileName)}</span>
+          </a>
+        </li>`,
+    )
+    .join('\n');
+
+  return `<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>川西与九寨沟攻略导航</title>
+    <title>${escapeHtml(page.title)}</title>
     <style>
       :root {
         color-scheme: light;
@@ -164,86 +237,47 @@
   <body>
     <main>
       <section class="hero">
-        <p class="eyebrow">Trip Plan / Chuanxi</p>
-        <h1>川西与九寨沟攻略导航</h1>
+        <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
+        <h1>${escapeHtml(page.title)}</h1>
         <p class="summary">
-          这里收纳了当前目录下除本页外的全部四川旅行攻略页面，包含川西小环线、九寨沟自由行、预算清单与包车避坑内容。
+          ${escapeHtml(page.summary)}
         </p>
         <div class="actions">
-          <a class="button primary" href="../index.html">返回 tripPlan 首页</a>
+          <a class="button primary" href="${escapeHtml(page.backHref)}">${escapeHtml(page.backLabel)}</a>
         </div>
       </section>
 
       <ul class="list">
-        <li>
-          <a href="包车服务与合同避坑指南.html">
-            <span class="item-title">川西小环线包车服务与合同避坑指南</span>
-            <span class="item-file">包车服务与合同避坑指南.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="成都往返九寨沟及周边4天攻略_20260426_20260429.html">
-            <span class="item-title">成都往返九寨沟及周边4天攻略</span>
-            <span class="item-file">成都往返九寨沟及周边4天攻略_20260426_20260429.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="川西小环线包车签约前终极攻略.html">
-            <span class="item-title">川西小环线包车签约前终极攻略</span>
-            <span class="item-file">川西小环线包车签约前终极攻略.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="川西小环线包车签约清单.html">
-            <span class="item-title">川西小环线包车签约清单</span>
-            <span class="item-file">川西小环线包车签约清单.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="景点清单.html">
-            <span class="item-title">五一川西小环线 景点清单汇总 (全量详细版)</span>
-            <span class="item-file">景点清单.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="九寨沟4天预算清单_20260426_20260429.html">
-            <span class="item-title">九寨沟4天预算清单</span>
-            <span class="item-file">九寨沟4天预算清单_20260426_20260429.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="九寨沟自由行执行清单_20260426_20260429.html">
-            <span class="item-title">九寨沟自由行执行清单</span>
-            <span class="item-file">九寨沟自由行执行清单_20260426_20260429.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="五一川西小环线_必去景点排序.html">
-            <span class="item-title">五一川西小环线必去景点排序</span>
-            <span class="item-file">五一川西小环线_必去景点排序.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="行程方案_风景优先版.html">
-            <span class="item-title">五一川西小环线行程方案：风景优先版</span>
-            <span class="item-file">行程方案_风景优先版.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="行程方案_经典平衡版.html">
-            <span class="item-title">五一川西小环线行程方案：经典平衡版</span>
-            <span class="item-file">行程方案_经典平衡版.html</span>
-          </a>
-        </li>
-        <li>
-          <a href="行程方案_稳妥轻松版.html">
-            <span class="item-title">五一川西小环线行程方案：稳妥轻松版</span>
-            <span class="item-file">行程方案_稳妥轻松版.html</span>
-          </a>
-        </li>
+${listMarkup}
       </ul>
 
-      <p class="footer">共 11 个攻略页面。</p>
+      <p class="footer">共 ${items.length} 个攻略页面。</p>
     </main>
   </body>
 </html>
+`;
+}
+
+function decodeHtml(value) {
+  return value
+    .replaceAll('&nbsp;', ' ')
+    .replaceAll('&amp;', '&')
+    .replaceAll('&lt;', '<')
+    .replaceAll('&gt;', '>')
+    .replaceAll('&quot;', '"')
+    .replaceAll('&#39;', "'");
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
